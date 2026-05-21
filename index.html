@@ -305,32 +305,44 @@
       text-align: justify;
     }
 
-    .project {
+   .project {
+    min-height: 760px;
+    display: flex;
+    align-items: flex-start;
     background:
-    linear-gradient(180deg, rgba(6,20,33,0.92), rgba(6,20,33,0.98)),
-    url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center/cover fixed no-repeat;
-    }
+    linear-gradient(180deg, rgba(6,20,33,0.42), rgba(6,20,33,0.58)),
+      url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center center/cover fixed no-repeat;
+    }  
 
-      .project-card {
-      background: rgba(16, 43, 66, 0.84);
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      padding: clamp(28px, 5vw, 56px);
-      max-width: 850px;
-      backdrop-filter: blur(10px);
+     .project-card {
+    background: rgba(16, 43, 66, 0.78);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 30px;
+    max-width: 430px;
+    margin-left: auto;
+    margin-top: 20px;
+    backdrop-filter: blur(8px);
     }
 
     .project-card h2 {
-      font-size: clamp(36px, 6vw, 66px);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 22px;
+    font-size: clamp(28px, 3.4vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
     }
 
     .project-card p {
-      color: var(--muted);
-      font-size: 19px;
-      margin-bottom: 24px;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    text-align: justify;
+    }
+
+    .project-card .btn {
+    padding: 11px 18px;
+    font-size: 14px;
     }
 
     .cards {
@@ -681,6 +693,28 @@
 
 .project-card h2 {
   font-size: 34px;
+}
+
+  .project {
+  min-height: auto;
+  background:
+    linear-gradient(180deg, rgba(6,20,33,0.58), rgba(6,20,33,0.78)),
+    url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center center/cover no-repeat;
+}
+
+.project-card {
+  max-width: 100%;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 26px;
+}
+
+.project-card h2 {
+  font-size: 32px;
+}
+
+.project-card p {
+  font-size: 16px;
 }
       
     }
