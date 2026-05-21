@@ -14,44 +14,18 @@
       --text: #f5f7fa;
       --muted: #b9c5cf;
       --accent: #f2b84b;
-      --accent-2: #5ec4ff;
       --line: rgba(255,255,255,0.12);
       --white: #ffffff;
       --dark: #07111b;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
@@ -62,45 +36,12 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .brand img {
-      width: 54px;
-      height: auto;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 15px;
-      line-height: 1.2;
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .menu a:hover {
-      color: var(--white);
-    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .brand img { width: 54px; height: auto; }
+    .brand span { display: block; font-size: 15px; line-height: 1.2; }
+    .menu { display: flex; align-items: center; gap: 22px; font-size: 14px; color: var(--muted); }
+    .menu a:hover { color: var(--white); }
 
     .btn {
       display: inline-flex;
@@ -114,25 +55,10 @@
       cursor: pointer;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #17202a;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      background: #ffd06a;
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,0.35);
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .btn-primary { background: var(--accent); color: #17202a; }
+    .btn-primary:hover { transform: translateY(-1px); background: #ffd06a; }
+    .btn-outline { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
     .hero {
       position: relative;
@@ -145,625 +71,147 @@
         url("https://oceanschool.ru/wp-content/uploads/2018/07/hero_banner.jpg") center/cover no-repeat;
     }
 
-    .hero-content {
-      max-width: 760px;
-      padding: 90px 0;
-    }
+    .hero-content { max-width: 760px; padding: 90px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; margin-bottom: 22px; }
+    h1 { font-size: clamp(42px, 8vw, 86px); line-height: 0.98; letter-spacing: -0.05em; margin-bottom: 28px; }
+    .hero p { font-size: clamp(18px, 2vw, 24px); color: var(--muted); max-width: 680px; margin-bottom: 34px; text-align: justify; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .eyebrow {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 13px;
-      margin-bottom: 22px;
-    }
+    section { padding: 86px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(32px, 5vw, 54px); line-height: 1.04; letter-spacing: -0.04em; max-width: 760px; }
+    .section-head p { color: var(--muted); max-width: 420px; font-size: 17px; text-align: justify; }
 
-    h1 {
-      font-size: clamp(42px, 8vw, 86px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      margin-bottom: 28px;
-    }
+    .intro { background: #f3f0e8; color: var(--dark); }
+    .intro-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+    .intro h2 { font-size: clamp(34px, 5vw, 58px); line-height: 1.06; letter-spacing: -0.04em; margin-bottom: 24px; }
+    .intro p { font-size: 19px; color: #334455; margin-bottom: 18px; text-align: justify; }
+    .intro-card { background: var(--white); color: var(--dark); border-radius: 28px; padding: 34px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+    .intro-card strong { color: #0b4b78; }
 
-    .hero p {
-  font-size: clamp(18px, 2vw, 24px);
-  color: var(--muted);
-  max-width: 680px;
-  margin-bottom: 34px;
-  text-align: justify;
-}
+    .people { background: var(--bg); }
+    .people-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .person-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 30px; overflow: hidden; }
+    .person-card img { width: 100%; height: 380px; object-fit: cover; }
+    .person-card img.person-photo-elagin { object-fit: cover; object-position: center center; transform: scale(0.95); background: #0b2235; }
+    .person-body { padding: 30px; }
+    .person-body h3 { font-size: 30px; margin-bottom: 8px; }
+    .role { color: var(--accent); font-weight: 700; margin-bottom: 16px; }
+    .person-body p { color: var(--muted); margin-bottom: 22px; text-align: justify; }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .cards { background: #f7f7f3; color: var(--dark); }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .team-grid { grid-template-columns: repeat(4, 1fr); }
+    .info-card { background: var(--white); border-radius: 26px; padding: 30px; min-height: 250px; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
+    .info-card .num { color: #0b6fa4; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .info-card h3 { font-size: 25px; line-height: 1.15; margin-bottom: 14px; }
+    .info-card p { color: #4b5d69; text-align: justify; }
 
-    section {
-      padding: 86px 0;
-    }
+    .project { background: var(--bg); padding: 86px 0; }
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 38px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-      max-width: 760px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      max-width: 420px;
-      font-size: 17px;
-      text-align: justify;
-    }
-
-    .intro {
-      background: #f3f0e8;
-      color: var(--dark);
-    }
-
-    .intro-grid {
+    .project-stage {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .intro h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.06;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
-    }
-
-    .intro p {
-  font-size: 19px;
-  color: #334455;
-  margin-bottom: 18px;
-  text-align: justify;
-}
-
-    .intro-card {
-      background: var(--white);
-      color: var(--dark);
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-    }
-
-    .intro-card strong {
-      color: #0b4b78;
-    }
-
-    .intro-card p {
-    text-align: justify;
-    }
-
-    .people {
-      background: var(--bg);
-    }
-
-    .people-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .person-card {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      overflow: hidden;
-    }
-
-    .person-card img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-    }
-
-    .person-card img.person-photo-yazykov {
-    object-fit: contain;
-    object-position: center center;
-    background: #0b2235;
-    }
-
-    .person-card img.person-photo-elagin {
-    object-fit: cover;
-    object-position: center center;
-    transform: scale(0.95);
-    background: #0b2235;
-    }
-
-    .person-body {
-      padding: 30px;
-    }
-
-    .person-body h3 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .role {
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .person-body p {
-      color: var(--muted);
-      margin-bottom: 22px;
-      text-align: justify;
-    }
-
-   .project {
-    background: var(--bg);
-    padding: 0;
-    }
-
-    .project-banner {
-  position: relative;
-  width: min(100% - 32px, var(--max));
-  margin: 0 auto;
-  border-radius: 34px;
-  overflow: hidden;
-  min-height: 680px;
-  background: #0b2235;
-  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
-}
-
-.project-banner img {
-  width: 100%;
-  height: 680px;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-}
-
-.project-card {
-  position: absolute;
-  top: 44px;
-  right: 44px;
-  background: rgba(16, 43, 66, 0.88);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 28px;
-  max-width: 430px;
-  backdrop-filter: blur(8px);
-}
-
-.project-card h2 {
-  font-size: clamp(28px, 3.2vw, 42px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin-bottom: 18px;
-}
-
-.project-card p {
-  color: var(--muted);
-  font-size: 15.5px;
-  line-height: 1.55;
-  margin-bottom: 14px;
-  text-align: justify;
-  }
-
-  .project-card .btn {
-    padding: 11px 18px;
-    font-size: 14px;
-  }
-
-      .cards {
-      background: #f7f7f3;
-      color: var(--dark);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .info-card {
-      background: var(--white);
-      border-radius: 26px;
-      padding: 30px;
-      min-height: 250px;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
-    }
-
-    .info-card .num {
-      color: #0b6fa4;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .info-card h3 {
-      font-size: 25px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .info-card p {
-    color: #4b5d69;
-    text-align: justify;
-    }
-    .yacht {
-      background: var(--bg-soft);
-    }
-
-    .yacht-grid {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .yacht-img {
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--white);
-    }
-
-    .yacht-img img {
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-    }
-
-    .yacht-text h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 22px;
-    }
-
-    .yacht-text p {
-    color: var(--muted);
-    font-size: 18px;
-    margin-bottom: 18px;
-    text-align: justify;
-    }
-
-    .media {
-      background: var(--bg);
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .video-box {
-      background: #000;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      min-height: 420px;
-    }
-
-    .video-box iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      border: 0;
-    }
-
-    .telegram-box {
-      background: linear-gradient(160deg, #0f466c, #12324d);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .telegram-box h3 {
-      font-size: 30px;
-      line-height: 1.1;
-    }
-
-    .telegram-box p {
-      color: var(--muted);
-    }
-
-    .links {
-      background: #f3f0e8;
-      color: var(--dark);
-    }
-
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .link-tile {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 24px;
-      min-height: 170px;
-      border: 1px solid rgba(0,0,0,0.08);
-      transition: 0.2s ease;
-    }
-
-    .link-tile:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
-    }
-
-    .link-tile h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .link-tile p {
-      color: #52616c;
-      font-size: 15px;
-      text-align: justify;
-    }
-
-    .contacts {
-      background: var(--bg-soft);
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--line);
+      grid-template-columns: 1fr 410px;
+      min-height: 680px;
       border-radius: 34px;
-      padding: clamp(28px, 5vw, 56px);
+      overflow: hidden;
+      background: #0b2235;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.35);
     }
 
-    .contact-box h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 18px;
+    .project-photo {
+      min-height: 680px;
+      background: url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center 58%/cover no-repeat;
     }
 
-    .contact-box p {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-      align-content: center;
-    }
-
-    .contact-item {
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
+    .project-card {
+      align-self: start;
+      margin: 44px 44px 44px 0;
+      background: rgba(16, 43, 66, 0.94);
       border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
     }
 
-    .contact-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
+    .project-card h2 { font-size: clamp(28px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .project-card p { color: var(--muted); font-size: 15.5px; line-height: 1.55; margin-bottom: 14px; text-align: justify; }
+    .project-card .btn { padding: 11px 18px; font-size: 14px; }
 
-    .contact-item strong {
-      font-size: 18px;
-    }
+    .yacht { background: var(--bg-soft); }
+    .yacht-grid { display: grid; grid-template-columns: 360px 1fr; gap: 44px; align-items: center; }
+    .yacht-img { border-radius: 28px; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+    .yacht-img img { width: 100%; height: 440px; object-fit: cover; }
+    .yacht-text h2 { font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 22px; }
+    .yacht-text p { color: var(--muted); font-size: 18px; margin-bottom: 18px; text-align: justify; }
 
-    footer {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-      background: #040d16;
-    }
+    .media { background: var(--bg); }
+    .media-grid { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 28px; align-items: stretch; }
+    .video-box { background: #000; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); min-height: 420px; }
+    .video-box iframe { width: 100%; height: 100%; min-height: 420px; border: 0; }
+    .telegram-box { background: linear-gradient(160deg, #0f466c, #12324d); border: 1px solid var(--line); border-radius: 28px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+    .telegram-box h3 { font-size: 30px; line-height: 1.1; }
+    .telegram-box p { color: var(--muted); }
 
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+    .links { background: #f3f0e8; color: var(--dark); }
+    .link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .link-tile { background: var(--white); border-radius: 22px; padding: 24px; min-height: 170px; border: 1px solid rgba(0,0,0,0.08); transition: 0.2s ease; }
+    .link-tile:hover { transform: translateY(-3px); box-shadow: 0 16px 35px rgba(0,0,0,0.10); }
+    .link-tile h3 { font-size: 22px; margin-bottom: 10px; }
+    .link-tile p { color: #52616c; font-size: 15px; text-align: justify; }
+
+    .contacts { background: var(--bg-soft); }
+    .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; background: var(--bg-card); border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 56px); }
+    .contact-box h2 { font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .contact-box p { color: var(--muted); font-size: 18px; text-align: justify; }
+    .contact-list { display: grid; gap: 14px; align-content: center; }
+    .contact-item { padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); }
+    .contact-item span { display: block; color: var(--muted); font-size: 13px; margin-bottom: 3px; }
+    .contact-item strong { font-size: 18px; }
+
+    footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; background: #040d16; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-stage { grid-template-columns: 1fr; }
+      .project-photo { min-height: 540px; }
+      .project-card { margin: 0; border-radius: 0; max-width: none; }
     }
 
     @media (max-width: 900px) {
-      .menu {
-        display: none;
-      }
-
-      .hero {
-        min-height: 640px;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-head p {
-        margin-top: 16px;
-      }
-
-      .intro-grid,
-      .people-grid,
-      .yacht-grid,
-      .media-grid,
-      .contact-box {
-      grid-template-columns: 1fr;
-      }
-
-      .card-grid,
-      .link-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .person-card img,
-      .yacht-img img {
-        height: 320px;
-      }
+      .menu { display: none; }
+      .hero { min-height: 640px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+      .intro-grid, .people-grid, .yacht-grid, .media-grid, .contact-box { grid-template-columns: 1fr; }
+      .card-grid, .link-grid { grid-template-columns: repeat(2, 1fr); }
+      .person-card img, .yacht-img img { height: 320px; }
     }
 
     @media (max-width: 620px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
-
-      section {
-        padding: 64px 0;
-      }
-
-      .nav {
-        min-height: 68px;
-      }
-
-      .brand img {
-        width: 46px;
-      }
-
-      .brand span {
-        font-size: 13px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .card-grid,
-      .link-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .video-box,
-      .video-box iframe {
-        min-height: 280px;
-      }
-      .hero {
-  min-height: 760px;
-  align-items: flex-start;
-  background-position: center top;
-}
-
-.hero-content {
-  padding: 120px 0 40px;
-}
-
-.hero p {
-  text-align: left;
-  font-size: 17px;
-  line-height: 1.65;
-}
-
-.nav {
-  align-items: center;
-  gap: 10px;
-}
-
-.brand {
-  gap: 8px;
-  min-width: 130px;
-}
-
-.brand img {
-  width: 38px;
-}
-
-.brand span {
-  font-size: 12px;
-}
-
-.topbar .btn {
-  width: auto;
-  padding: 11px 22px;
-  font-size: 14px;
-}
-
-.hero-actions {
-  gap: 14px;
-}
-
-.hero-actions .btn {
-  width: 100%;
-}
-
-.project-card h2 {
-  font-size: 34px;
-}
-
-  .project {
-  min-height: auto;
-  background:
-    linear-gradient(180deg, rgba(6,20,33,0.58), rgba(6,20,33,0.78)),
-    url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center center/cover no-repeat;
-}
-
-.project-card {
-  max-width: 100%;
-  margin-left: 0;
-  margin-top: 0;
-  padding: 26px;
-}
-
-.project-card h2 {
-  font-size: 32px;
-}
-
-.project-card p {
-  font-size: 16px;
-}
-
-.project {
-  padding: 0;
-}
-
-.project-banner {
-  width: 100%;
-  border-radius: 0;
-  min-height: auto;
-}
-
-.project-banner img {
-  height: 520px;
-  object-position: center center;
-}
-
-.project-card {
-  position: static;
-  max-width: none;
-  margin: 0;
-  border-radius: 0;
-  padding: 26px;
-}
-
-.project-card h2 {
-  font-size: 32px;
-}
-
-.project-card p {
-  font-size: 16px;
-}
-      
+      .container { width: min(100% - 24px, var(--max)); }
+      section { padding: 64px 0; }
+      .nav { min-height: 68px; align-items: center; gap: 10px; }
+      .brand { gap: 8px; min-width: 130px; }
+      .brand img { width: 38px; }
+      .brand span { font-size: 12px; }
+      .topbar .btn { width: auto; padding: 11px 22px; font-size: 14px; }
+      .hero { min-height: 760px; align-items: flex-start; background-position: center top; }
+      .hero-content { padding: 120px 0 40px; }
+      .hero p { text-align: left; font-size: 17px; line-height: 1.65; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-actions .btn { width: 100%; }
+      .card-grid, .link-grid, .team-grid { grid-template-columns: 1fr; }
+      .project { padding: 0; }
+      .project-stage { width: 100%; border-radius: 0; min-height: auto; }
+      .project-photo { min-height: 460px; background-position: center center; }
+      .project-card { padding: 26px; }
+      .project-card h2 { font-size: 32px; }
+      .project-card p { font-size: 16px; }
+      .video-box, .video-box iframe { min-height: 280px; }
     }
   </style>
 </head>
@@ -795,12 +243,7 @@
       <div class="container hero-content">
         <div class="eyebrow">Школа Океан Виталия Елагина</div>
         <h1>Школа, длиною в жизнь</h1>
-        <p>
-          <p>
-          Современное продолжение идеи Виктора Языкова: море, дальние плавания,
-          «Дочь Ветра», команда и живой опыт Виталия Елагина.
-          </p>
-        </p>
+        <p>Современное продолжение идеи Виктора Языкова: море, дальние плавания, «Дочь Ветра», команда и живой опыт Виталия Елагина.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#education">С чего начать</a>
           <a class="btn btn-outline" href="#project">Следить за «Дочерью Ветра»</a>
@@ -809,223 +252,105 @@
     </section>
 
     <section class="intro" id="school">
-  <div class="container intro-grid">
-    <div>
-      <div class="eyebrow">Позиционирование школы</div>
-      <h2>Современный формат школы, выросший из идеи Виктора Языкова.</h2>
-      <p>
-        Школа Океан началась в 2006 году как идея Виктора Аркадьевича Языкова.
-        За эти годы она несколько раз трансформировалась.
-      </p>
-      <p>
-        Сегодня Виталий Елагин продолжает развитие этой идеи в собственном ключе —
-        через океанскую практику, кругосветный опыт, проект «Дочь Ветра»,
-        обучение и живую команду.
-      </p>
-      <p>
-        Это не попытка заменить или переписать школу Языкова. Это самостоятельный формат,
-        который помнит свое начало, но развивается дальше.
-      </p>
-    </div>
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow">Позиционирование школы</div>
+          <h2>Современный формат школы, выросший из идеи Виктора Языкова.</h2>
+          <p>Школа Океан началась в 2006 году как идея Виктора Аркадьевича Языкова. За эти годы она несколько раз трансформировалась.</p>
+          <p>Сегодня Виталий Елагин продолжает развитие этой идеи в собственном ключе — через океанскую практику, кругосветный опыт, проект «Дочь Ветра», обучение и живую команду.</p>
+          <p>Это не попытка заменить или переписать школу Языкова. Это самостоятельный формат, который помнит свое начало, но развивается дальше.</p>
+        </div>
 
-    <div class="intro-card">
-      <p>
-        <strong>Школа Океан Виталия Елагина</strong> — это живая морская практика,
-        дальние плавания, команда, медиа, Telegram, YouTube и честный разговор о том,
-        что значит быть готовым к настоящему морю.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="intro-card">
+          <p><strong>Школа Океан Виталия Елагина</strong> — это живая морская практика, дальние плавания, команда, медиа, Telegram, YouTube и честный разговор о том, что значит быть готовым к настоящему морю.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="people" id="people">
-  <div class="container">
-    <div class="section-head">
-      <h2>Школа Океан сегодня</h2>
-      <p>
-        Нынешний формат школы строится вокруг опыта Виталия Елагина,
-        проекта «Дочь Ветра», команды и живой морской практики.
-      </p>
-    </div>
-
-    <div class="people-grid">
-      <article class="person-card">
-        <img class="person-photo-elagin" src="https://oceanschool.ru/wp-content/themes/ocean/img/elagin.jpg" alt="Виталий Елагин" />
-        <div class="person-body">
-          <h3>Виталий Елагин</h3>
-          <div class="role">Капитан и автор нынешнего формата школы</div>
-          <p>
-            Виталий Елагин связан с одиночными плаваниями, кругосветным опытом,
-            проектом «Дочь Ветра» и развитием живой практики Школы Океан.
-            Сегодня именно вокруг этого опыта, команды и текущих проектов
-            строится новый формат школы.
-          </p>
-          <a class="btn btn-outline" href="https://oceanschool.ru/2013/03/vitaliy-elagin/" target="_blank" rel="noopener">Подробнее</a>
+      <div class="container">
+        <div class="section-head">
+          <h2>Школа Океан сегодня</h2>
+          <p>Нынешний формат школы строится вокруг опыта Виталия Елагина, проекта «Дочь Ветра», команды и живой морской практики.</p>
         </div>
-      </article>
 
-      <article class="person-card">
-        <div class="person-body">
-          <div class="eyebrow">Истоки</div>
-          <h3>Виктор Языков</h3>
-          <div class="role">Начало идеи Школы Океан</div>
-          <p>
-            Идея Школы Океан выросла из философии Виктора Аркадьевича Языкова.
-            Именно с этого началась история проекта.
-          </p>
-          <p>
-            Сегодня Школа Океан Виталия Елагина развивается как самостоятельное
-            продолжение этой идеи — с уважением к началу, но в собственном формате.
-          </p>
-          <a class="btn btn-outline" href="https://oceanschool.ru/2011/03/viktor-yazyikov/" target="_blank" rel="noopener">Об истоках школы</a>
+        <div class="people-grid">
+          <article class="person-card">
+            <img class="person-photo-elagin" src="https://oceanschool.ru/wp-content/themes/ocean/img/elagin.jpg" alt="Виталий Елагин" />
+            <div class="person-body">
+              <h3>Виталий Елагин</h3>
+              <div class="role">Капитан и автор нынешнего формата школы</div>
+              <p>Виталий Елагин связан с одиночными плаваниями, кругосветным опытом, проектом «Дочь Ветра» и развитием живой практики Школы Океан. Сегодня именно вокруг этого опыта, команды и текущих проектов строится новый формат школы.</p>
+              <a class="btn btn-outline" href="https://oceanschool.ru/2013/03/vitaliy-elagin/" target="_blank" rel="noopener">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-body">
+              <div class="eyebrow">Истоки</div>
+              <h3>Виктор Языков</h3>
+              <div class="role">Начало идеи Школы Океан</div>
+              <p>Идея Школы Океан выросла из философии Виктора Аркадьевича Языкова. Именно с этого началась история проекта.</p>
+              <p>Сегодня Школа Океан Виталия Елагина развивается как самостоятельное продолжение этой идеи — с уважением к началу, но в собственном формате.</p>
+              <a class="btn btn-outline" href="https://oceanschool.ru/2011/03/viktor-yazyikov/" target="_blank" rel="noopener">Об истоках школы</a>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <section class="cards" id="team">
-  <div class="container">
-    <div class="section-head">
-      <h2>Команда и Ангелы проекта</h2>
-      <p>
-        Школа Океан сегодня — это не только капитан и яхта. Это люди,
-        которые помогают проекту жить, развиваться и становиться современным.
-      </p>
-    </div>
+      <div class="container">
+        <div class="section-head">
+          <h2>Команда и Ангелы проекта</h2>
+          <p>Школа Океан сегодня — это не только капитан и яхта. Это люди, которые помогают проекту жить, развиваться и становиться современным.</p>
+        </div>
 
-    <div class="card-grid">
-      <article class="info-card">
-        <div class="num">Капитан</div>
-        <h3>Виталий Елагин</h3>
-        <p>
-          Проект «Дочь Ветра», океанская практика, современный формат Школы Океан,
-          обучение и развитие живого морского сообщества.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <div class="num">Цифровой проект</div>
-        <h3>Алексей Чванов</h3>
-        <p>
-          Цифровая перезапаковка сайта, структура проекта, связь с ADVENTURE HORIZONS,
-          тексты, логика страниц и развитие сайта как рабочего инструмента.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <div class="num">Команда</div>
-        <h3>Наталья</h3>
-        <p>
-          Поддержка проекта, коммуникации, участие в развитии сайта,
-          материалов и живого пространства вокруг Школы Океан.
-        </p>
-      </article>
-
-      <article class="info-card">
-        <div class="num">Инженерия</div>
-        <h3>Петр Штаничев</h3>
-        <p>
-          Яхтенный инженер. Техническая экспертиза, практический взгляд на яхту,
-          системы, эксплуатацию и инженерную сторону морских проектов.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
+        <div class="card-grid team-grid">
+          <article class="info-card"><div class="num">Капитан</div><h3>Виталий Елагин</h3><p>Проект «Дочь Ветра», океанская практика, современный формат Школы Океан, обучение и развитие живого морского сообщества.</p></article>
+          <article class="info-card"><div class="num">Цифровой проект</div><h3>Алексей Чванов</h3><p>Цифровая перезапаковка сайта, структура проекта, связь с ADVENTURE HORIZONS, тексты, логика страниц и развитие сайта как рабочего инструмента.</p></article>
+          <article class="info-card"><div class="num">Команда</div><h3>Наталья</h3><p>Поддержка проекта, коммуникации, участие в развитии сайта, материалов и живого пространства вокруг Школы Океан.</p></article>
+          <article class="info-card"><div class="num">Инженерия</div><h3>Петр Штаничев</h3><p>Яхтенный инженер. Техническая экспертиза, практический взгляд на яхту, системы, эксплуатацию и инженерную сторону морских проектов.</p></article>
+        </div>
+      </div>
+    </section>
 
     <section class="project" id="project">
-      <div class="container">
-      <section class="project" id="project">
-  <div class="project-banner">
-    <img src="https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg" alt="Яхта Дочь Ветра в океане" />
-
-    <div class="project-card">
-      <div class="eyebrow">Океанская практика школы</div>
-      <h2>«Дочь Ветра» и кругосветный опыт Виталия Елагина</h2>
-      <p>
-        «Дочь Ветра» — один из ключевых океанских проектов Виталия Елагина
-        и важная часть живой истории Школы Океан.
-      </p>
-      <p>
-        Кругосветное плавание на «Дочери Ветра» уже завершено, но его опыт остается
-        практической основой нынешнего формата школы: маршрут, одиночество, погода,
-        технические решения, ответственность капитана и реальное море.
-      </p>
-      <p>
-        Сегодня YouTube и Telegram школы помогают сохранять этот опыт, рассказывать
-        о проектах, делиться материалами и развивать сообщество вокруг Школы Океан
-        Виталия Елагина.
-      </p>
-      <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
-    </div>
-  </div>
-</section>
-
-    <div class="project-image">
-      <img src="https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg" alt="Яхта Дочь Ветра в океане" />
-    </div>
-  </div>
-</section>
+      <div class="project-stage">
+        <div class="project-photo" role="img" aria-label="Яхта Дочь Ветра в океане"></div>
+        <div class="project-card">
+          <div class="eyebrow">Океанская практика школы</div>
+          <h2>«Дочь Ветра» и кругосветный опыт Виталия Елагина</h2>
+          <p>«Дочь Ветра» — один из ключевых океанских проектов Виталия Елагина и важная часть живой истории Школы Океан.</p>
+          <p>Кругосветное плавание на «Дочери Ветра» уже завершено, но его опыт остается практической основой нынешнего формата школы: маршрут, одиночество, погода, технические решения, ответственность капитана и реальное море.</p>
+          <p>Сегодня YouTube и Telegram школы помогают сохранять этот опыт, рассказывать о проектах, делиться материалами и развивать сообщество вокруг Школы Океан Виталия Елагина.</p>
+          <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
+        </div>
+      </div>
+    </section>
 
     <section class="cards" id="education">
       <div class="container">
         <div class="section-head">
           <h2>Что дает Школа Океан</h2>
-          <p>
-            Задача новой версии сайта — сделать обучение, материалы и каналы школы понятными для человека,
-            который пришел впервые.
-          </p>
+          <p>Задача новой версии сайта — сделать обучение, материалы и каналы школы понятными для человека, который пришел впервые.</p>
         </div>
-
         <div class="card-grid">
-          <article class="info-card">
-            <div class="num">01 / Обучение</div>
-            <h3>Морская подготовка</h3>
-            <p>
-              Семинары, встречи, консультации и программы для тех, кто хочет понимать яхту,
-              море и дальний переход глубже обычного курса.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <div class="num">02 / Практика</div>
-            <h3>Дальние плавания</h3>
-            <p>
-              Не декоративный яхтинг, а взрослая морская логика: маршрут, безопасность,
-              автономность, ремонт, погода и ответственность капитана.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <div class="num">03 / Знание</div>
-            <h3>Энциклопедия</h3>
-            <p>
-              Статьи, книги, разборы, яхтенная философия и материалы школы, которые нужно
-              сохранить и сделать удобными для чтения.
-            </p>
-          </article>
+          <article class="info-card"><div class="num">01 / Обучение</div><h3>Морская подготовка</h3><p>Семинары, встречи, консультации и программы для тех, кто хочет понимать яхту, море и дальний переход глубже обычного курса.</p></article>
+          <article class="info-card"><div class="num">02 / Практика</div><h3>Дальние плавания</h3><p>Не декоративный яхтинг, а взрослая морская логика: маршрут, безопасность, автономность, ремонт, погода и ответственность капитана.</p></article>
+          <article class="info-card"><div class="num">03 / Знание</div><h3>Энциклопедия</h3><p>Статьи, книги, разборы, яхтенная философия и материалы школы, которые нужно сохранить и сделать удобными для чтения.</p></article>
         </div>
       </div>
     </section>
 
     <section class="yacht">
       <div class="container yacht-grid">
-        <div class="yacht-img">
-          <img src="https://oceanschool.ru/wp-content/uploads/2016/01/draw_right_img.jpg" alt="Yazykov-8M" />
-        </div>
-
+        <div class="yacht-img"><img src="https://oceanschool.ru/wp-content/uploads/2016/01/draw_right_img.jpg" alt="Yazykov-8M" /></div>
         <div class="yacht-text">
           <div class="eyebrow">Яхты школы</div>
           <h2>Yazykov-8M</h2>
-          <p>
-            В логике Школы Океан яхта — не просто корпус, паруса и снасти. Это инструмент
-            познания, движения и проверки человека морем.
-          </p>
-          <p>
-            Проект Yazykov-8M продолжает идею безопасной яхты для дальних путешествий
-            малочисленным экипажем и без избыточной зависимости от сложных систем.
-          </p>
+          <p>В логике Школы Океан яхта — не просто корпус, паруса и снасти. Это инструмент познания, движения и проверки человека морем.</p>
+          <p>Проект Yazykov-8M продолжает идею безопасной яхты для дальних путешествий малочисленным экипажем и без избыточной зависимости от сложных систем.</p>
           <a class="btn btn-outline" href="http://solosailing.su/" target="_blank" rel="noopener">Подробнее о проекте</a>
         </div>
       </div>
@@ -1035,31 +360,11 @@
       <div class="container">
         <div class="section-head">
           <h2>Видео и живая лента школы</h2>
-          <p>
-           <p>
-              Видео, новости, заметки с борта и текущая жизнь проекта — в YouTube и Telegram Школы Океан.
-          </p>
+          <p>Видео, новости, заметки с борта и текущая жизнь проекта — в YouTube и Telegram Школы Океан.</p>
         </div>
-
         <div class="media-grid">
-          <div class="video-box">
-            <iframe
-              src="https://www.youtube.com/embed/OovU0hdOMq4"
-              title="Видео Школы Океан"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <aside class="telegram-box">
-            <div>
-              <h3>Telegram: «Дочь Ветра в Океане»</h3>
-              <p>
-                Оперативные новости, маршрут, заметки, фотографии и текущая жизнь проекта.
-              </p>
-            </div>
-            <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Перейти в канал</a>
-          </aside>
+          <div class="video-box"><iframe src="https://www.youtube.com/embed/OovU0hdOMq4" title="Видео Школы Океан" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <aside class="telegram-box"><div><h3>Telegram: «Дочь Ветра в Океане»</h3><p>Оперативные новости, маршрут, заметки, фотографии и текущая жизнь проекта.</p></div><a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Перейти в канал</a></aside>
         </div>
       </div>
     </section>
@@ -1068,80 +373,28 @@
       <div class="container">
         <div class="section-head">
           <h2>Разделы Школы Океан</h2>
-          <p>
-            Материалы, проекты, обучение, видео и архив школы собраны в основных разделах сайта.
-          </p>
+          <p>Материалы, проекты, обучение, видео и архив школы собраны в основных разделах сайта.</p>
         </div>
-
         <div class="link-grid">
-          <a class="link-tile" href="https://oceanschool.ru/category/magic-ocean/" target="_blank" rel="noopener">
-            <h3>Магия Океана</h3>
-            <p>Знания, которые нам дарит океан.</p>
-          </a>
-
-          <a class="link-tile" href="https://oceanschool.ru/category/golden-globe-2018/" target="_blank" rel="noopener">
-            <h3>Проекты школы</h3>
-            <p>Живые и архивные проекты Школы Океан.</p>
-          </a>
-
-          <a class="link-tile" href="https://oceanschool.ru/category/yachts-for-ocean/" target="_blank" rel="noopener">
-            <h3>Яхты школы</h3>
-            <p>Яхты, конструкции и философия морского инструмента.</p>
-          </a>
-
-          <a class="link-tile" href="https://oceanschool.ru/category/sailing-school/" target="_blank" rel="noopener">
-            <h3>Обучение</h3>
-            <p>Встречи, семинары и обучающие программы.</p>
-          </a>
-
-          <a class="link-tile" href="https://www.youtube.com/channel/UCPpppL6KqphIUkdCTF_ocUA?view_as=public" target="_blank" rel="noopener">
-            <h3>Видеоканал</h3>
-            <p>Видео школы, океана и проектов.</p>
-          </a>
-
-          <a class="link-tile" href="https://oceanschool.ru/category/yacht-encyclopedia/" target="_blank" rel="noopener">
-            <h3>Энциклопедия</h3>
-            <p>Статьи на яхтенную и морскую тематику.</p>
-          </a>
-
-          <a class="link-tile" href="https://oceanschool.ru/category/knigi/" target="_blank" rel="noopener">
-            <h3>Книги</h3>
-            <p>Материалы и рекомендации школы.</p>
-          </a>
-
-          <a class="link-tile" href="https://chvanovab-source.github.io/ADVENTURE-HORIZONS/index.html" target="_blank" rel="noopener">
-            <h3>Adventure Horizons</h3>
-            <p>Связанный проект: практический яхтинг, маршруты, техника и медиа.</p>
-          </a>
+          <a class="link-tile" href="https://oceanschool.ru/category/magic-ocean/" target="_blank" rel="noopener"><h3>Магия Океана</h3><p>Знания, которые нам дарит океан.</p></a>
+          <a class="link-tile" href="https://oceanschool.ru/category/golden-globe-2018/" target="_blank" rel="noopener"><h3>Проекты школы</h3><p>Живые и архивные проекты Школы Океан.</p></a>
+          <a class="link-tile" href="https://oceanschool.ru/category/yachts-for-ocean/" target="_blank" rel="noopener"><h3>Яхты школы</h3><p>Яхты, конструкции и философия морского инструмента.</p></a>
+          <a class="link-tile" href="https://oceanschool.ru/category/sailing-school/" target="_blank" rel="noopener"><h3>Обучение</h3><p>Встречи, семинары и обучающие программы.</p></a>
+          <a class="link-tile" href="https://www.youtube.com/channel/UCPpppL6KqphIUkdCTF_ocUA?view_as=public" target="_blank" rel="noopener"><h3>Видеоканал</h3><p>Видео школы, океана и проектов.</p></a>
+          <a class="link-tile" href="https://oceanschool.ru/category/yacht-encyclopedia/" target="_blank" rel="noopener"><h3>Энциклопедия</h3><p>Статьи на яхтенную и морскую тематику.</p></a>
+          <a class="link-tile" href="https://oceanschool.ru/category/knigi/" target="_blank" rel="noopener"><h3>Книги</h3><p>Материалы и рекомендации школы.</p></a>
+          <a class="link-tile" href="https://chvanovab-source.github.io/ADVENTURE-HORIZONS/index.html" target="_blank" rel="noopener"><h3>Adventure Horizons</h3><p>Связанный проект: практический яхтинг, маршруты, техника и медиа.</p></a>
         </div>
       </div>
     </section>
 
     <section class="contacts" id="contacts">
       <div class="container contact-box">
-        <div>
-          <div class="eyebrow">Связаться со школой</div>
-          <h2>Написать, подписаться, задать вопрос</h2>
-          <p>
-             Свяжитесь со школой, подпишитесь на Telegram-канал или задайте вопрос по обучению, консультациям и проектам.
-          </p>
-        </div>
-
+        <div><div class="eyebrow">Связаться со школой</div><h2>Написать, подписаться, задать вопрос</h2><p>Свяжитесь со школой, подпишитесь на Telegram-канал или задайте вопрос по обучению, консультациям и проектам.</p></div>
         <div class="contact-list">
-          <a class="contact-item" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">
-            <span>Telegram</span>
-            <strong>@Oceanschoolru</strong>
-          </a>
-
-          <a class="contact-item" href="mailto:solosail@oceanschool.ru">
-            <span>Email</span>
-            <strong>solosail@oceanschool.ru</strong>
-          </a>
-
-          <a class="contact-item" href="tel:+79298529243">
-            <span>Телефон</span>
-            <strong>+7 929 852 9243</strong>
-          </a>
+          <a class="contact-item" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener"><span>Telegram</span><strong>@Oceanschoolru</strong></a>
+          <a class="contact-item" href="mailto:solosail@oceanschool.ru"><span>Email</span><strong>solosail@oceanschool.ru</strong></a>
+          <a class="contact-item" href="tel:+79298529243"><span>Телефон</span><strong>+7 929 852 9243</strong></a>
         </div>
       </div>
     </section>
@@ -1150,11 +403,7 @@
   <footer>
     <div class="container footer-row">
       <div>© Школа Океан. Океанская школа дальних плаваний.</div>
-      <div>
-        <a href="https://oceanschool.ru/politika-konfidencialnosti/" target="_blank" rel="noopener">
-          Политика конфиденциальности
-        </a>
-      </div>
+      <div><a href="https://oceanschool.ru/politika-konfidencialnosti/" target="_blank" rel="noopener">Политика конфиденциальности</a></div>
     </div>
   </footer>
 </body>
