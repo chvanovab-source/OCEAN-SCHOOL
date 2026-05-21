@@ -306,9 +306,31 @@
     }
 
     .project {
-      background:
-        linear-gradient(180deg, rgba(6,20,33,0.92), rgba(6,20,33,0.98)),
-        url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center/cover fixed no-repeat;
+    background:
+    linear-gradient(180deg, rgba(6,20,33,0.78), rgba(6,20,33,0.92)),
+    url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center/cover fixed no-repeat;
+    }
+
+    .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 34px;
+    align-items: center;
+    }
+
+    .project-image {
+    border-radius: 34px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+    background: #0b2235;
+    }
+
+    .project-image img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    object-position: center center;
     }
 
     .project-card {
@@ -577,8 +599,9 @@
       .people-grid,
       .yacht-grid,
       .media-grid,
+      .project-grid,
       .contact-box {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
       }
 
       .card-grid,
@@ -678,6 +701,15 @@
 .hero-actions .btn {
   width: 100%;
 }
+
+.project-image img {
+  height: 280px;
+}
+
+.project-card h2 {
+  font-size: 34px;
+}
+      
     }
   </style>
 </head>
@@ -854,23 +886,33 @@
   <div class="eyebrow">Океанская практика школы</div>
   <h2>«Дочь Ветра» и кругосветный опыт Виталия Елагина</h2>
   <p>
-    «Дочь Ветра» — один из ключевых океанских проектов Виталия Елагина
-    и важная часть живой истории Школы Океан.
-  </p>
-  <p>
-    Кругосветное плавание на «Дочери Ветра» уже завершено, но его опыт остается
-    практической основой нынешнего формата школы: маршрут, одиночество, погода,
-    технические решения, ответственность капитана и реальное море.
-  </p>
-  <p>
-    Сегодня YouTube и Telegram школы помогают сохранять этот опыт, рассказывать
-    о проектах, делиться материалами и развивать сообщество вокруг Школы Океан
-    Виталия Елагина.
-  </p>
-  <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
-</div>
-      </div>
-    </section>
+   <section class="project" id="project">
+  <div class="container project-grid">
+    <div class="project-card">
+      <div class="eyebrow">Океанская практика школы</div>
+      <h2>«Дочь Ветра» и кругосветный опыт Виталия Елагина</h2>
+      <p>
+        «Дочь Ветра» — один из ключевых океанских проектов Виталия Елагина
+        и важная часть живой истории Школы Океан.
+      </p>
+      <p>
+        Кругосветное плавание на «Дочери Ветра» уже завершено, но его опыт остается
+        практической основой нынешнего формата школы: маршрут, одиночество, погода,
+        технические решения, ответственность капитана и реальное море.
+      </p>
+      <p>
+        Сегодня YouTube и Telegram школы помогают сохранять этот опыт, рассказывать
+        о проектах, делиться материалами и развивать сообщество вокруг Школы Океан
+        Виталия Елагина.
+      </p>
+      <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
+    </div>
+
+    <div class="project-image">
+      <img src="https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg" alt="Яхта Дочь Ветра в океане" />
+    </div>
+  </div>
+</section>
 
     <section class="cards" id="education">
       <div class="container">
