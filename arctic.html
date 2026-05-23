@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Русский Север. Арктика — Школа Океан Виталия Елагина</title>
+  <meta name="description" content="Русский Север. Арктика — экспедиционная концепция Школы Океан Виталия Елагина: малая яхта, автономность, северный маршрут, медиа-история и партнерство с брендом." />
+  <style>
+    :root {
+      --bg: #061421;
+      --bg-soft: #0b2235;
+      --bg-card: #102b42;
+      --text: #f5f7fa;
+      --muted: #b9c5cf;
+      --accent: #f2b84b;
+      --ice: #dff5ff;
+      --line: rgba(255,255,255,0.12);
+      --white: #ffffff;
+      --dark: #07111b;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(6, 20, 33, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .brand img { width: 54px; height: auto; }
+    .brand span { display: block; font-size: 15px; line-height: 1.2; }
+    .menu { display: flex; align-items: center; gap: 22px; font-size: 14px; color: var(--muted); }
+    .menu a:hover { color: var(--white); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #17202a; }
+    .btn-primary:hover { transform: translateY(-1px); background: #ffd06a; }
+    .btn-outline { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero {
+      min-height: 780px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(6,20,33,0.96) 0%, rgba(6,20,33,0.80) 52%, rgba(6,20,33,0.30) 100%),
+        url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center/cover no-repeat;
+    }
+
+    .hero-content { max-width: 820px; padding: 100px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; margin-bottom: 22px; }
+    h1 { font-size: clamp(44px, 8vw, 90px); line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 28px; }
+    .hero p { font-size: clamp(18px, 2vw, 24px); color: var(--muted); max-width: 720px; margin-bottom: 34px; text-align: justify; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    section { padding: 86px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(32px, 5vw, 58px); line-height: 1.04; letter-spacing: -0.04em; max-width: 760px; }
+    .section-head p { color: var(--muted); max-width: 440px; font-size: 17px; text-align: justify; }
+
+    .light { background: #f3f0e8; color: var(--dark); }
+    .light .section-head p { color: #4b5d69; }
+    .dark { background: var(--bg); }
+    .soft { background: var(--bg-soft); }
+
+    .lead-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 34px; align-items: stretch; }
+    .lead-card { background: var(--white); border-radius: 30px; padding: 34px; box-shadow: 0 18px 50px rgba(0,0,0,0.10); }
+    .lead-card h3 { font-size: 30px; line-height: 1.1; margin-bottom: 16px; }
+    .lead-card p { color: #334455; font-size: 18px; text-align: justify; margin-bottom: 14px; }
+
+    .dark-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 30px; padding: 34px; }
+    .dark-card h3 { font-size: 30px; line-height: 1.1; margin-bottom: 16px; }
+    .dark-card p { color: var(--muted); font-size: 18px; text-align: justify; margin-bottom: 14px; }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .info-card { background: var(--white); color: var(--dark); border-radius: 26px; padding: 30px; min-height: 250px; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
+    .info-card .num { color: #0b6fa4; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .info-card h3 { font-size: 24px; line-height: 1.15; margin-bottom: 14px; }
+    .info-card p { color: #4b5d69; text-align: justify; }
+
+    .route-map {
+      border-radius: 34px;
+      overflow: hidden;
+      background: #dff5ff;
+      min-height: 440px;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+    }
+    .route-text { padding: 42px; color: var(--dark); background: #f7f7f3; }
+    .route-text h3 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .route-text p { color: #334455; font-size: 18px; text-align: justify; margin-bottom: 14px; }
+    .route-visual {
+      background:
+        linear-gradient(160deg, rgba(6,20,33,0.2), rgba(6,20,33,0.55)),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Arctic_Ocean_-_en.png/1280px-Arctic_Ocean_-_en.png") center/cover no-repeat;
+      min-height: 440px;
+    }
+
+    .quote-band {
+      background: #12324d;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 70px 0;
+    }
+    .quote-band blockquote {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      text-align: center;
+    }
+    .quote-band span { color: var(--accent); }
+
+    .budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .budget-card { background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 28px; padding: 30px; }
+    .budget-card h3 { font-size: 28px; margin-bottom: 18px; }
+    .budget-list { list-style: none; display: grid; gap: 10px; color: var(--muted); }
+    .budget-list li { display: flex; justify-content: space-between; gap: 18px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; }
+    .budget-total { margin-top: 20px; font-size: 24px; color: var(--accent); font-weight: 800; }
+
+    .cta { background: #f3f0e8; color: var(--dark); }
+    .cta-box { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: var(--white); border-radius: 34px; padding: clamp(28px, 5vw, 56px); box-shadow: 0 18px 50px rgba(0,0,0,0.10); }
+    .cta-box h2 { font-size: clamp(34px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .cta-box p { color: #334455; font-size: 18px; text-align: justify; margin-bottom: 22px; }
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item { padding: 18px 20px; border-radius: 18px; background: #f3f0e8; border: 1px solid rgba(0,0,0,0.08); }
+    .contact-item span { display: block; color: #52616c; font-size: 13px; margin-bottom: 3px; }
+    .contact-item strong { font-size: 18px; }
+
+    footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; background: #040d16; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .route-map, .budget-grid, .cta-box { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .menu { display: none; }
+      .hero { min-height: 640px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+      .lead-grid, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      section { padding: 64px 0; }
+      .nav { min-height: 68px; align-items: center; gap: 10px; }
+      .brand { gap: 8px; min-width: 130px; }
+      .brand img { width: 38px; }
+      .brand span { font-size: 12px; }
+      .topbar .btn { width: auto; padding: 11px 22px; font-size: 14px; }
+      .hero { min-height: 720px; align-items: flex-start; background-position: center top; }
+      .hero-content { padding: 120px 0 40px; }
+      .hero p { text-align: left; font-size: 17px; line-height: 1.65; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-actions .btn { width: 100%; }
+      .grid-4, .grid-3 { grid-template-columns: 1fr; }
+      .route-text { padding: 28px; }
+      .route-visual { min-height: 300px; }
+      .budget-list li { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="https://oceanschool.ru/wp-content/uploads/2018/07/logo.png" alt="Школа Океан" />
+        <span>Школа<br>Океан</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Главная</a>
+        <a href="#idea">Идея</a>
+        <a href="#brand">Для бренда</a>
+        <a href="#route">Маршрут</a>
+        <a href="#budget">Инвестиция</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Экспедиционная концепция Школы Океан</div>
+        <h1>Русский Север. Арктика</h1>
+        <p>
+          На малой яхте без авторулевого. Настоящая автономия — это свобода от зависимостей.
+          Экспедиция Школы Океан может превратить бренд партнера в символ мужества,
+          надежности и технологического лидерства.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacts">Обсудить участие</a>
+          <a class="btn btn-outline" href="index.html">Вернуться на главную</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="idea">
+      <div class="container lead-grid">
+        <div class="lead-card">
+          <div class="eyebrow">Главная идея</div>
+          <h3>Автономия как символ свободы</h3>
+          <p>
+            Проект строится вокруг сильной и простой формулы: настоящая автономия — это свобода
+            от зависимостей. Малая яхта, северный маршрут, холод, одиночество, инженерная простота
+            и отказ от избыточной зависимости от сложных систем создают историю, которую невозможно
+            заменить обычной рекламой.
+          </p>
+          <p>
+            Это не просто яхтенная экспедиция. Это демонстрация надежности, характера и способности
+            оставаться с собой, когда весь мир против.
+          </p>
+        </div>
+
+        <div class="lead-card">
+          <div class="eyebrow">Почему это важно</div>
+          <h3>Не баннер. Легенда.</h3>
+          <p>
+            Рынок перегружен стандартными рекламными кампаниями. Люди устали от обещаний «лучшего
+            сервиса» и «качества». Им нужна история, которая вызывает восхищение и сама привлекает
+            внимание к бренду.
+          </p>
+          <p>
+            Партнер получает не размещение логотипа ради галочки, а право быть частью истории,
+            которую будут рассказывать годами.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="brand">
+      <div class="container">
+        <div class="section-head">
+          <h2>Что получает бренд</h2>
+          <p>
+            Проект работает не как рекламный носитель, а как среда доверия: бренд становится частью
+            истории про автономность, надежность и технологическое лидерство.
+          </p>
+        </div>
+        <div class="grid-4">
+          <article class="info-card">
+            <div class="num">01 / Символ</div>
+            <h3>Брендирование</h3>
+            <p>Логотип партнера становится частью яхты, фото, видео и визуальной истории экспедиции.</p>
+          </article>
+          <article class="info-card">
+            <div class="num">02 / Контент</div>
+            <h3>Материалы на годы</h3>
+            <p>Фото, видео, тексты, книга, цифровой архив, публикации и материалы для соцсетей и сайта.</p>
+          </article>
+          <article class="info-card">
+            <div class="num">03 / Доверие</div>
+            <h3>Лояльность</h3>
+            <p>Клиенты покупают не только услугу. Они покупают эмоцию, смысл, свободу и надежность.</p>
+          </article>
+          <article class="info-card">
+            <div class="num">04 / Лидерство</div>
+            <h3>Новый стандарт</h3>
+            <p>Партнер становится не просто компанией, а проводником нового стандарта автономности.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="container">
+        <blockquote>
+          Вы не продаете товар. <span>Вы решаете проблему.</span><br>
+          Другие могут рекламировать скорость. Вы — надежность.
+          Другие — комфорт. Вы — свободу.
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="light" id="route">
+      <div class="container">
+        <div class="section-head">
+          <h2>Сценарий экспедиции</h2>
+          <p>
+            Маршрутная линия построена как большая северная история: старт, путь, промежуточные точки,
+            репортажи, встречи, контент и финальное событие.
+          </p>
+        </div>
+        <div class="route-map">
+          <div class="route-text">
+            <h3>От Мангазеи к Владивостоку</h3>
+            <p>
+              Концепция предполагает северную экспедиционную линию: Мангазея, Белое море,
+              Карское море, море Лаптевых, Восточно-Сибирское море, Чукотка, Камчатка,
+              Сахалин и Владивосток.
+            </p>
+            <p>
+              На каждом этапе проект может давать партнеру информационные поводы:
+              репортажи, встречи, публикации, фото и видео, работа с аудиторией и рост
+              узнаваемости бренда.
+            </p>
+          </div>
+          <div class="route-visual" aria-label="Арктический маршрут экспедиции"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="result">
+      <div class="container">
+        <div class="section-head">
+          <h2>Результат для партнера</h2>
+          <p>
+            На выходе бренд получает не разовую рекламную кампанию, а долгую историю,
+            к которой можно возвращаться в медиа, продажах, PR и коммуникациях.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="dark-card">
+            <h3>Инфоповод</h3>
+            <p>Публикации, новости, социальные сети, интерес аудитории и поводы для коммуникации с рынком.</p>
+          </article>
+          <article class="dark-card">
+            <h3>База контактов</h3>
+            <p>Рост подписчиков, сбор интереса, работа с лояльной аудиторией и формирование сообщества вокруг проекта.</p>
+          </article>
+          <article class="dark-card">
+            <h3>Элитное сообщество</h3>
+            <p>Возможность создать круг людей, которые ценят смысл выше цены, автономность выше комфорта и надежность выше обещаний.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="budget">
+      <div class="container">
+        <div class="section-head">
+          <h2>Инвестиция в историю и технологию</h2>
+          <p>
+            PDF-концепция содержит ориентировочную смету строительства, оснащения и операционного
+            сопровождения экспедиции. Итоговый бюджет обсуждается отдельно с партнером.
+          </p>
+        </div>
+        <div class="budget-grid">
+          <div class="budget-card">
+            <h3>Постройка яхты</h3>
+            <ul class="budget-list">
+              <li><span>Чертежи и расчеты</span><strong>400 тыс. руб.</strong></li>
+              <li><span>Корпус</span><strong>500 тыс. руб.</strong></li>
+              <li><span>Шверт / киль</span><strong>200 тыс. руб.</strong></li>
+              <li><span>Рангоут и такелаж</span><strong>200 тыс. руб.</strong></li>
+              <li><span>Паруса</span><strong>200 тыс. руб.</strong></li>
+              <li><span>Оборудование</span><strong>300 тыс. руб.</strong></li>
+            </ul>
+            <div class="budget-total">Ориентир: 2 млн руб.</div>
+          </div>
+
+          <div class="budget-card">
+            <h3>Экспедиция</h3>
+            <ul class="budget-list">
+              <li><span>Снаряжение и оборудование</span><strong>810 тыс. руб.</strong></li>
+              <li><span>Логистика</span><strong>250 тыс. руб.</strong></li>
+              <li><span>Питание и топливо</span><strong>400 тыс. руб.</strong></li>
+              <li><span>Сопровождение проекта</span><strong>2,56 млн руб.</strong></li>
+            </ul>
+            <div class="budget-total">Общая смета: 6,02 млн руб.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacts">
+      <div class="container cta-box">
+        <div>
+          <div class="eyebrow">Присоединяйтесь к созданию легенды</div>
+          <h2>Обсудить участие в проекте</h2>
+          <p>
+            Спонсорство в Школу Океан — это стратегическая инвестиция в бренд.
+            Проект предлагает эксклюзивный контент, уникальное позиционирование и
+            долгосрочную лояльность аудитории, которая ценит смысл выше цены.
+          </p>
+          <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener"><span>Telegram</span><strong>@Oceanschoolru</strong></a>
+          <a class="contact-item" href="mailto:solosail@oceanschool.ru"><span>Email</span><strong>solosail@oceanschool.ru</strong></a>
+          <a class="contact-item" href="tel:+79298529243"><span>Телефон</span><strong>+7 929 852 9243</strong></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© Школа Океан. Экспедиционная концепция.</div>
+      <div><a href="index.html">Вернуться на главную</a></div>
+    </div>
+  </footer>
+</body>
+</html>
