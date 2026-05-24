@@ -113,6 +113,24 @@
     @media (max-width:1050px) { .slide-card { grid-template-columns:1fr; } .intro-grid,.cta-box { grid-template-columns:1fr; } }
     @media (max-width:900px) { .menu { display:none; } .hero { min-height:640px; } .section-head { display:block; } .section-head p { margin-top:16px; } }
     @media (max-width:620px) { .container { width:min(100% - 24px,var(--max)); } section { padding:64px 0; } .nav { min-height:68px; gap:10px; } .brand { gap:8px; min-width:130px; } .brand img { width:38px; } .brand span { font-size:12px; } .topbar .btn { width:auto; padding:11px 22px; font-size:14px; } .hero { min-height:720px; align-items:flex-start; background-position:center top; } .hero-content { padding:120px 0 40px; } .hero p { text-align:left; font-size:17px; line-height:1.65; } .hero-actions { flex-direction:column; align-items:stretch; gap:14px; } .hero-actions .btn { width:100%; } .story-card,.cta-box { padding:26px; } .slide-card { padding:20px; } }
+    @media (max-width: 900px) {
+  .slide-card-feature {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .slide-feature-text {
+    padding: 0;
+  }
+
+  .slide-feature-actions {
+    flex-direction: column;
+  }
+
+  .slide-feature-actions .btn {
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body>
