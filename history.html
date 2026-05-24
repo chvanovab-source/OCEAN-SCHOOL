@@ -237,7 +237,7 @@
     Поэтому история «Дочери Ветра» — это не просто маршрут. Это вход в редкую
     человеческую территорию: один человек, одна яхта, океан и круг вокруг света.
   </p>
-</div>ражение, чтобы открыть его крупно.</p></div>
+</div>
         <div class="slide-list">
          <article class="slide-card slide-card-feature">
   <div class="slide-feature-text">
@@ -456,7 +456,7 @@
     const imageModal = document.getElementById('imageModal');
     const imageModalImg = document.getElementById('imageModalImg');
     const imageModalClose = document.querySelector('.image-modal-close');
-    document.querySelectorAll('.slide-image img, .intro-slide img').forEach((img) => {
+    document.querySelectorAll('.slide-image img, .intro-slide img, .slide-feature-image img').forEach((img) => {
       img.addEventListener('click', () => { imageModalImg.src = img.src; imageModalImg.alt = img.alt || 'Увеличенное изображение'; imageModal.classList.add('is-open'); imageModal.setAttribute('aria-hidden','false'); });
     });
     function closeImageModal() { imageModal.classList.remove('is-open'); imageModal.setAttribute('aria-hidden','true'); imageModalImg.src=''; imageModalImg.alt=''; }
