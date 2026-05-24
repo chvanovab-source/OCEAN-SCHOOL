@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Школа Океан Виталия Елагина</title>
-  <meta name="description" content="Школа Океан Виталия Елагина — современное продолжение идеи Виктора Языкова: океан, дальние плавания, Дочь Ветра, обучение, команда и живая морская практика." />
+  <meta name="description" content="Школа Океан Виталия Елагина — путь от первого выхода под парусом до уверенного шкипера, дальних плаваний, малых экипажей и океанских проектов." />
 
   <style>
     :root {
@@ -102,6 +102,7 @@
     .cards { background: #f7f7f3; color: var(--dark); }
     .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
     .team-grid { grid-template-columns: repeat(4, 1fr); }
+    .entry-grid { grid-template-columns: repeat(4, 1fr); }
     .info-card { background: var(--white); border-radius: 26px; padding: 30px; min-height: 250px; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
     .info-card .num { color: #0b6fa4; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
     .info-card h3 { font-size: 25px; line-height: 1.15; margin-bottom: 14px; }
@@ -139,15 +140,16 @@
     .project-card h2 { font-size: clamp(28px, 3.2vw, 42px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
     .project-card p { color: var(--muted); font-size: 15.5px; line-height: 1.55; margin-bottom: 14px; text-align: justify; }
     .project-card .btn { padding: 11px 18px; font-size: 14px; }
+
     .project-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .project-actions .btn {
-    padding: 11px 18px;
-    font-size: 14px;
+      padding: 11px 18px;
+      font-size: 14px;
     }
 
     .yacht { background: var(--bg-soft); }
@@ -185,7 +187,11 @@
     .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 1050px) {
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid,
+      .entry-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .project-stage { grid-template-columns: 1fr; }
       .project-photo { min-height: 540px; }
       .project-card { margin: 0; border-radius: 0; max-width: none; }
@@ -214,7 +220,7 @@
       .hero p { text-align: left; font-size: 17px; line-height: 1.65; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
       .hero-actions .btn { width: 100%; }
-      .card-grid, .link-grid, .team-grid { grid-template-columns: 1fr; }
+      .card-grid, .link-grid, .team-grid, .entry-grid { grid-template-columns: 1fr; }
       .project { padding: 0; }
       .project-stage { width: 100%; border-radius: 0; min-height: auto; }
       .project-photo { min-height: 460px; background-position: center center; }
@@ -222,14 +228,15 @@
       .project-card h2 { font-size: 32px; }
       .project-card p { font-size: 16px; }
       .video-box, .video-box iframe { min-height: 280px; }
+
       .project-actions {
-      flex-direction: column;
+        flex-direction: column;
       }
 
       .project-actions .btn {
-      width: 100%;
+        width: 100%;
       }
-      }
+    }
   </style>
 </head>
 
@@ -243,8 +250,9 @@
 
       <nav class="menu">
         <a href="#school">О школе</a>
+        <a href="#entry">С чего начать</a>
         <a href="#people">Виталий Елагин</a>
-         <a href="#team">Команда</a>
+        <a href="#team">Команда</a>
         <a href="#partners">Яхтинг</a>
         <a href="#project">Дочь Ветра</a>
         <a href="#education">Обучение</a>
@@ -256,22 +264,22 @@
     </div>
   </header>
 
- <main>
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="eyebrow">Школа Океан Виталия Елагина</div>
-      <h1>От первого выхода под парусом до дальних плаваний</h1>
-      <p>
-        Школа Океан — это путь от мягкого знакомства с яхтой до уверенного шкипера,
-        океанской практики, малых экипажей и экспедиционных проектов.
-        Возраст не имеет значения. Важны готовность учиться, познавать новое —
-        и желание открыть для себя море.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#entry">С чего начать</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Школа Океан Виталия Елагина</div>
+        <h1>От первого выхода под парусом до дальних плаваний</h1>
+        <p>
+          Школа Океан — это путь от мягкого знакомства с яхтой до уверенного шкипера,
+          океанской практики, малых экипажей и экспедиционных проектов.
+          Возраст не имеет значения. Важны готовность учиться, познавать новое —
+          и желание открыть для себя море.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entry">С чего начать</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <section class="intro" id="school">
       <div class="container intro-grid">
@@ -285,6 +293,57 @@
 
         <div class="intro-card">
           <p><strong>Школа Океан Виталия Елагина</strong> — это живая морская практика, дальние плавания, команда, медиа, Telegram, YouTube и честный разговор о том, что значит быть готовым к настоящему морю.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="entry">
+      <div class="container">
+        <div class="section-head">
+          <h2>Как войти в Школу Океан</h2>
+          <p>
+            В школу можно прийти с нуля: сначала познакомиться с яхтой и морем,
+            потом перейти к уверенной практике, дальним плаваниям и океанским проектам.
+          </p>
+        </div>
+
+        <div class="card-grid entry-grid">
+          <article class="info-card">
+            <div class="num">01 / Первый шаг</div>
+            <h3>Яхтур для новичков</h3>
+            <p>
+              Мягкое знакомство с яхтой, морем, маршрутом, экипажем и жизнью на борту.
+              Для тех, кто никогда не ходил под парусом или хочет спокойно понять,
+              подходит ли ему яхтинг.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">02 / Базовая уверенность</div>
+            <h3>Уверенный шкипер</h3>
+            <p>
+              Следующий уровень для тех, кто хочет не просто участвовать в походе,
+              а понимать яхту, безопасность, маршрут, погоду, экипаж и ответственность капитана.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">03 / Практика</div>
+            <h3>Дальние плавания</h3>
+            <p>
+              Переходы, автономность, вахты, усталость, ремонт, погода, решения в море
+              и взрослая морская логика, которая появляется только в настоящем пути.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">04 / Перспектива</div>
+            <h3>ISSA / IYT</h3>
+            <p>
+              В будущем школа может развивать обучение по международным системам сертификации,
+              если это будет встроено в практическую логику Школы Океан и реальные программы.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -338,58 +397,75 @@
     </section>
 
     <section class="cards" id="partners">
-  <div class="container">
-    <div class="section-head">
-      <h2>Яхтинг с Чинкве Терре</h2>
-      <p>
-          Совместный проект Школы Океан Виталия Елагина и Чинкве Терре —
-          спокойный вход в море для активной взрослой аудитории. Возраст не помеха,
-          если есть интерес к новому и желание открыть для себя яхту.
-      </p>
-    </div>
-
-    <div class="card-grid">
-     <article class="info-card">
-        <div class="num">01 / 50+</div>
-        <h3>Активный возраст</h3>
-        <p>
-          Формат рассчитан на активных взрослых людей, которым интересны новые впечатления,
-          путешествия, море, общение и спокойное знакомство с яхтингом без спортивного давления.
-        </p>
-    </article>
-
-    <article class="info-card">
-        <div class="num">02 / Мягкий формат</div>
-        <h3>Возраст не помеха</h3>
-        <p>
-        Здесь не нужно доказывать спортивную форму или морской опыт. Достаточно интереса
-        к новому, желания быть в движении и готовности открыть для себя море.
-        </p>
-    </article>
-
-      <article class="info-card">
-        <div class="num">03 / Партнерство</div>
-        <h3>Школа Океан × Чинкве Терре</h3>
-        <p>
-          Проект соединяет морскую практику Виталия Елагина и опыт Чинкве Терре
-          в организации путешествий, программ и событий для активной взрослой аудитории.
-        </p>
-      </article>
-    </div>
-
-    <div style="margin-top: 28px;">
-      <a class="btn btn-primary" href="https://5terre.ru/yachting" target="_blank" rel="noopener">
-        Открыть страницу Чинкве Терре
-      </a>
-    </div>
-  </div>
-</section>
-   
-      <section class="cards" id="education">
       <div class="container">
         <div class="section-head">
-          <h2>Что дает Школа Океан</h2>
-          <p>Задача новой версии сайта — сделать обучение, материалы и каналы школы понятными для человека, который пришел впервые.</p>
+          <h2>Яхтинг с Чинкве Терре</h2>
+          <p>
+            Совместный проект Школы Океан Виталия Елагина и Чинкве Терре —
+            спокойный вход в море для активной взрослой аудитории. Возраст не помеха,
+            если есть интерес к новому и желание открыть для себя яхту.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <div class="num">01 / 50+</div>
+            <h3>Активный возраст</h3>
+            <p>
+              Формат рассчитан на активных взрослых людей, которым интересны новые впечатления,
+              путешествия, море, общение и спокойное знакомство с яхтингом без спортивного давления.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">02 / Мягкий формат</div>
+            <h3>Возраст не помеха</h3>
+            <p>
+              Здесь не нужно доказывать спортивную форму или морской опыт. Достаточно интереса
+              к новому, желания быть в движении и готовности открыть для себя море.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">03 / Партнерство</div>
+            <h3>Школа Океан × Чинкве Терре</h3>
+            <p>
+              Проект соединяет морскую практику Виталия Елагина и опыт Чинкве Терре
+              в организации путешествий, программ и событий для активной взрослой аудитории.
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <a class="btn btn-primary" href="https://5terre.ru/yachting" target="_blank" rel="noopener">
+            Открыть страницу Чинкве Терре
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project" id="project">
+      <div class="project-stage">
+        <div class="project-photo" role="img" aria-label="Яхта Дочь Ветра в океане"></div>
+        <div class="project-card">
+          <div class="eyebrow">Океанская практика школы</div>
+          <h2>«Дочь Ветра» и кругосветный опыт Виталия Елагина</h2>
+          <p>«Дочь Ветра» — один из ключевых океанских проектов Виталия Елагина и важная часть живой истории Школы Океан.</p>
+          <p>Кругосветное плавание на «Дочери Ветра» уже завершено, но его опыт остается практической основой нынешнего формата школы: маршрут, одиночество, погода, технические решения, ответственность капитана и реальное море.</p>
+          <p>Сегодня YouTube и Telegram школы помогают сохранять этот опыт, рассказывать о проектах, делиться материалами и развивать сообщество вокруг Школы Океан Виталия Елагина.</p>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
+            <a class="btn btn-outline" href="history.html">История похода</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="education">
+      <div class="container">
+        <div class="section-head">
+          <h2>Обучение, материалы и практика</h2>
+          <p>Школа собирает знания, живой опыт и практические форматы так, чтобы человеку было понятно, с чего начать и куда расти дальше.</p>
         </div>
         <div class="card-grid">
           <article class="info-card"><div class="num">01 / Обучение</div><h3>Морская подготовка</h3><p>Семинары, встречи, консультации и программы для тех, кто хочет понимать яхту, море и дальний переход глубже обычного курса.</p></article>
@@ -400,28 +476,28 @@
     </section>
 
     <section class="yacht">
-  <div class="container yacht-grid">
-    <div class="yacht-img">
-      <img src="https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg" alt="Арктическая экспедиционная концепция Школы Океан" />
-    </div>
+      <div class="container yacht-grid">
+        <div class="yacht-img">
+          <img src="https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg" alt="Арктическая экспедиционная концепция Школы Океан" />
+        </div>
 
-    <div class="yacht-text">
-      <div class="eyebrow">Экспедиционная концепция</div>
-      <h2>Русский Север. Арктика</h2>
-      <p>
-        Настоящая автономия — это свобода от зависимостей. Арктическая экспедиция
-        Школы Океан Виталия Елагина может стать символом мужества, надежности
-        и технологического лидерства.
-      </p>
-      <p>
-        Это отдельная большая идея: малая яхта, северный маршрут, автономность,
-        инженерная простота, медиа-история и возможность для бренда стать частью
-        легенды, которую будут рассказывать годами.
-      </p>
-      <a class="btn btn-outline" href="arctic.html">Открыть концепцию</a>
-    </div>
-  </div>
-</section>
+        <div class="yacht-text">
+          <div class="eyebrow">Экспедиционная концепция</div>
+          <h2>Русский Север. Арктика</h2>
+          <p>
+            Настоящая автономия — это свобода от зависимостей. Арктическая экспедиция
+            Школы Океан Виталия Елагина может стать символом мужества, надежности
+            и технологического лидерства.
+          </p>
+          <p>
+            Это отдельная большая идея: малая яхта, северный маршрут, автономность,
+            инженерная простота, медиа-история и возможность для бренда стать частью
+            легенды, которую будут рассказывать годами.
+          </p>
+          <a class="btn btn-outline" href="arctic.html">Открыть концепцию</a>
+        </div>
+      </div>
+    </section>
 
     <section class="media" id="media">
       <div class="container">
