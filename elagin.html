@@ -1,10 +1,390 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Виталий Елагин</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Виталий Елагин — Школа Океан</title>
+  <meta name="description" content="Биография Виталия Елагина: спортивная карьера, яхтенный капитан, преподавательская деятельность, одиночные плавания, проект «В поисках сердца мира» и Школа Океан." />
+
+  <style>
+    :root {
+      --bg: #061421;
+      --bg-soft: #0b2235;
+      --bg-card: #102b42;
+      --text: #f5f7fa;
+      --muted: #b9c5cf;
+      --accent: #f2b84b;
+      --line: rgba(255,255,255,0.12);
+      --white: #ffffff;
+      --dark: #07111b;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(6, 20, 33, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .brand img { width: 54px; height: auto; }
+    .brand span { display: block; font-size: 15px; line-height: 1.2; }
+    .menu { display: flex; align-items: center; gap: 22px; font-size: 14px; color: var(--muted); }
+    .menu a:hover { color: var(--white); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--accent); color: #17202a; }
+    .btn-primary:hover { transform: translateY(-1px); background: #ffd06a; }
+    .btn-outline { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(6,20,33,0.96) 0%, rgba(6,20,33,0.82) 46%, rgba(6,20,33,0.35) 100%),
+        url("https://oceanschool.ru/wp-content/uploads/2018/07/hero_banner.jpg") center/cover no-repeat;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 46px;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; margin-bottom: 22px; }
+    h1 { font-size: clamp(46px, 8vw, 92px); line-height: 0.96; letter-spacing: -0.055em; margin-bottom: 28px; }
+    .hero p { font-size: clamp(18px, 2vw, 23px); color: var(--muted); max-width: 720px; margin-bottom: 34px; text-align: justify; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-photo {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(0.98);
+      background: #0b2235;
+    }
+
+    section { padding: 86px 0; }
+    .light { background: #f3f0e8; color: var(--dark); }
+    .dark { background: var(--bg); }
+    .soft { background: var(--bg-soft); }
+
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(32px, 5vw, 58px); line-height: 1.04; letter-spacing: -0.04em; max-width: 780px; }
+    .section-head p { color: var(--muted); max-width: 440px; font-size: 17px; text-align: justify; }
+    .light .section-head p { color: #52616c; }
+
+    .bio-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 32px; align-items: start; }
+    .toc-card {
+      position: sticky;
+      top: 100px;
+      background: var(--white);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+    }
+    .toc-card h3 { font-size: 26px; margin-bottom: 18px; }
+    .toc-card a { display: block; color: #0b6fa4; font-weight: 700; padding: 9px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .toc-card a:last-child { border-bottom: 0; }
+
+    .article-card {
+      background: var(--white);
+      border-radius: 30px;
+      padding: clamp(28px, 4vw, 46px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+    }
+    .article-block { padding: 8px 0 34px; margin-bottom: 28px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .article-block:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .article-block h3 { font-size: clamp(28px, 4vw, 42px); line-height: 1.08; letter-spacing: -0.035em; margin-bottom: 18px; }
+    .article-block p { color: #334455; font-size: 18px; margin-bottom: 16px; text-align: justify; }
+    .article-block strong { color: #0b4b78; }
+
+    .fact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .fact-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 24px; padding: 26px; }
+    .fact-card .num { color: var(--accent); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 13px; margin-bottom: 14px; }
+    .fact-card h3 { font-size: 22px; line-height: 1.15; margin-bottom: 10px; }
+    .fact-card p { color: var(--muted); text-align: justify; }
+
+    .project-band {
+      background:
+        linear-gradient(90deg, rgba(6,20,33,0.92), rgba(6,20,33,0.78)),
+        url("https://oceanschool.ru/wp-content/uploads/2023/11/doch-vetra-snova-v-okeane.jpg") center/cover no-repeat;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .band-box {
+      max-width: 900px;
+      padding: 20px 0;
+    }
+
+    .band-box h2 {
+      font-size: clamp(36px, 6vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 24px;
+    }
+
+    .band-box p {
+      color: var(--muted);
+      font-size: 19px;
+      text-align: justify;
+      margin-bottom: 22px;
+    }
+
+    .cta { background: #f3f0e8; color: var(--dark); }
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--white);
+      border-radius: 34px;
+      padding: clamp(28px,5vw,56px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+    }
+    .cta-box h2 { font-size: clamp(34px,5vw,60px); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .cta-box p { color: #334455; font-size: 18px; text-align: justify; margin-bottom: 22px; }
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item { padding: 18px 20px; border-radius: 18px; background: #f3f0e8; border: 1px solid rgba(0,0,0,0.08); }
+    .contact-item span { display: block; color: #52616c; font-size: 13px; margin-bottom: 3px; }
+    .contact-item strong { font-size: 18px; }
+
+    footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; background: #040d16; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .hero-grid, .bio-grid, .cta-box { grid-template-columns: 1fr; }
+      .hero-photo img { height: 420px; }
+      .toc-card { position: static; }
+      .fact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .menu { display: none; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+      .hero { min-height: 660px; }
+      .hero-grid { padding: 90px 0 50px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      section { padding: 64px 0; }
+      .nav { min-height: 68px; gap: 10px; }
+      .brand { gap: 8px; min-width: 130px; }
+      .brand img { width: 38px; }
+      .brand span { font-size: 12px; }
+      .topbar .btn { width: auto; padding: 11px 22px; font-size: 14px; }
+      .hero p, .article-block p, .band-box p, .cta-box p { text-align: left; }
+      .hero-photo img { height: 320px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .fact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Виталий Елагин</h1>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="https://oceanschool.ru/wp-content/uploads/2018/07/logo.png" alt="Школа Океан" />
+        <span>Школа<br>Океан</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html">Главная</a>
+        <a href="#sport">Спорт</a>
+        <a href="#captain">Капитан</a>
+        <a href="#teaching">Преподавание</a>
+        <a href="#solo">Одиночные плавания</a>
+        <a href="#school">Школа Океан</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Капитан и автор нынешнего формата школы</div>
+          <h1>Виталий Елагин</h1>
+          <p>
+            Яхтенный капитан, преподаватель, одиночный яхтсмен и автор нынешнего
+            формата Школы Океан. Его путь — от детских парусных классов и
+            черноморских переходов до одиночной кругосветки на яхте «Дочь Ветра».
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#bio">Читать биографию</a>
+            <a class="btn btn-outline" href="history.html">История кругосветки</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="https://oceanschool.ru/wp-content/themes/ocean/img/elagin.jpg" alt="Виталий Елагин" />
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="bio">
+      <div class="container bio-grid">
+        <aside class="toc-card">
+          <h3>Содержание</h3>
+          <a href="#sport">Начало спортивной карьеры</a>
+          <a href="#captain">Карьера яхтенного капитана</a>
+          <a href="#teaching">Преподавательская деятельность</a>
+          <a href="#solo">Одиночные гонки и плавания</a>
+          <a href="#school">Школа Океан</a>
+        </aside>
+
+        <article class="article-card">
+          <div class="article-block" id="sport">
+            <h3>Начало спортивной карьеры</h3>
+            <p>Виталий Елагин родился 13 января 1981 года в Геленджике на Черноморском побережье.</p>
+            <p>Отец Виталия, Геннадий Елагин, был первым директором первого в Геленджике яхт-клуба, по существу организовав парусную жизнь в курортном городе. Благодаря этому Виталий с детства ходит под парусом, участвуя в крейсерских плаваниях по Чёрному и Азовскому морям, в парусных соревнованиях на детско-юношеских классах яхт «Оптимист», «Луч», изредка на «Кадете». Уже в раннем возрасте он осознанно тяготел к яхтам-одиночкам.</p>
+            <p>В 1998 году Виталий выигрывает первенство России по парусному спорту. Но радость победы быстро проходит, что заставляет его закончить спортивную карьеру в поисках новых жизненных целей. Только со временем приходит понимание, что не настолько важно достижение цели, как сама эволюция в процессе работы над собой.</p>
+            <p>Через пару лет Елагин возвращается к гонкам на крейсерских и спортивных яхтах, таких как MX700, J70, «Ракета». Среди новых достижений — победа в регате Gazprom International и участие в одиночной гонке в Атлантике Jester Challenge.</p>
+          </div>
+
+          <div class="article-block" id="captain">
+            <h3>Карьера яхтенного капитана</h3>
+            <p>С 12 лет отец брал Виталия в дальние плавания на крейсерских яхтах по Чёрному и Азовскому морям. Благодаря семейной яхте «Коралл» он с подросткового возраста выступает в роли «15-летнего капитана»: несколько сезонов живёт на её борту, катает клиентов, совершает одиночные и дружеские прогулки вдоль Черноморского побережья, переживает шторма на якоре и однажды выпадает за борт при одиночном штормовом переходе по Геленджикской бухте.</p>
+            <p>После школы Виталий поступает на бюджет в Университет физкультуры в Краснодаре, на кафедру парусного спорта. С 2000-х годов участвует в перегонах яхт, любительских регатах наёмным шкипером, работает шеф-инструктором при обучении взрослых в России и за рубежом. С 2018 года выступает как самостоятельный организатор различных мероприятий под парусом за границей и брокер по поиску чартерных яхт.</p>
+            <p>Профессиональное образование в сфере яхтинга Виталий получил ещё по советской системе подготовки яхтенных капитанов — от удостоверения «Юный рулевой» до звания «Яхтенный капитан».</p>
+            <p>Кроме этого, он проходил обучение в ГИМС, получил современный российский диплом от ВФПС и Спорткомитета «Яхтенный капитан океанского плавания», международные сертификаты IYT Yachtmaster Offshore Sail и Marine Communication Master (VHF-SRC), государственные удостоверения Минтранса на право управления прогулочным судном до 50 метров и маломерным судном, используемым в коммерческих целях, а также международный сертификат Basic Safety Training & Instruction (STCW-95).</p>
+            <p>Его опыт включает управление парусными яхтами до 60 футов в регионе от Азовского моря до Карибского бассейна и Балтики, включая трансатлантические переходы в обе стороны, в том числе не в сезон, а также одиночное плавание в ревущих сороковых и неистовых пятидесятых широтах.</p>
+          </div>
+
+          <div class="article-block" id="teaching">
+            <h3>Преподавательская деятельность</h3>
+            <p>Учёба в вузе не принесла Виталию ожидаемого удовлетворения. Уже по окончании первого курса он перешёл на индивидуальный график обучения и начал тренерскую работу с детьми в Геленджике.</p>
+            <p>В отсутствии материальной части и финансирования ему удалось воспитать отличного яхтсмена и гонщика Юрия Слепушникова, который впоследствии обошёл половину земного шара в качестве старшего помощника капитана на яхте «Планида».</p>
+            <p>В поисках новых возможностей Виталий попал во Всероссийский детский центр «Орлёнок», где получил пространство для развития. Там он возглавил сектор «Яхт-клуб», управлял командой из 10 тренеров-преподавателей и реализовал более 10 образовательных программ — от виндсёрфинга до морских походов, включая маршрут из Голубицкой на Азовском море в «Орлёнок» на Чёрном море.</p>
+            <p>Его воспитанник Аркадий Баранов выиграл краевые соревнования по парусному спорту и Международную московскую регату, что позволило официально открыть секцию парусного спорта в Туапсинском районе — первую и пока единственную после развала Туапсинского яхт-клуба в 90-х годах.</p>
+            <p>Совмещая работу в ВДЦ «Орлёнок», Виталий начинает карьеру в Московской парусной школе «Клуб яхтенных капитанов», где преподаёт практические курсы в Черногории по системе IYT. С 2020 года самостоятельно организует теоретические и практические курсы обучения, сотрудничая со школой IYT Wind Rose.</p>
+          </div>
+
+          <div class="article-block" id="solo">
+            <h3>Одиночные гонки и плавания</h3>
+            <p>В 2004 году «Орлёнок» приобрёл четыре «уставшие» яхты класса «Микро», и постепенно начинает зарождаться идея об организации на Чёрном море одиночной гонки.</p>
+            <p>Летом 2005 года Виталий Елагин встречает своего первого тренера по парусу, Коробова Юрия Степановича, который рассказывает о своих путешествиях на шлюпке и встрече с Виктором Языковым. Уже на следующей неделе Виталий отправляется в одиночное плавание из «Орлёнка» в Лазаревское, где встречается с легендой российского одиночного яхтинга Виктором Аркадьевичем Языковым.</p>
+            <p>Эта встреча стала поворотной: начался новый этап в жизни Елагина, связанный с осмыслением своих стремлений, знакомством с учением Гурджиева и другими эзотерическими практиками.</p>
+            <p><strong>2–18 октября 2006 года</strong> Виталий Елагин совершил одиночное плавание на яхте «Микро» по маршруту ВДЦ «Орлёнок» — Сочи — Самсун — Трабзон — Сочи — Лазаревское — Туапсе — ВДЦ «Орлёнок». По результатам плавания был написан рассказ «700 миль одиночества».</p>
+            <p><strong>Май — июнь 2008 года.</strong> После непродолжительной борьбы с французскими бастующими рыбаками Виталий вышел из Шербура на яхте «Zeelanna» в Плимут, откуда 31 мая стартовал в одиночной гонке Jester Challenge маршрутом на Прайя-де-Виктория. Измотанный поломками и ветрами, но непобеждённый, он прибыл туда 13 июля в 20:29 по местному времени.</p>
+            <p><strong>Август 2011 года.</strong> Планируя принять участие в одиночной гонке по Азовскому морю на яхте «Орлёнок», Виталий вышел из детского центра курсом на Ейск. Под Утришом при неблагоприятных погодных условиях он, получив пробоину, теряет яхту. Сидя на днище перевёрнутой яхты, он принимает решение выловить под водой рацию и успевает сообщить о происшествии пограничникам. Его спасает научно-исследовательское судно «Академик Штокман».</p>
+            <p><strong>2023–2024 годы.</strong> В 2022 году вместе с Глебом Турчаниновым Виталий вернул в Россию легендарную яхту Виктора Языкова «Дочь Ветра». После подготовки и ремонта яхты он отправился из Геленджика в кругосветное плавание.</p>
+            <p>В сентябре Виталий достигает Марокко, а 1 октября 2023 года выходит из Танжера в одиночное безостановочное плавание вокруг знаменитого своими штормами мыса Горн. Во время плавания были переворот, поломка электрических систем, отказ спутниковой связи, порванные паруса и остановка в Мар-дель-Плата, уже после прохождения пролива Дрейка, на ремонт.</p>
+            <p>15 июля 2024 года он благополучно завершил одиночный этап кругосветки, а затем с друзьями из Танжера вернулся в родной Геленджик, прибыв в Россию 1 сентября. Таким образом, Виталий Елагин стал третьим россиянином в истории после Конюхова и Языкова, обогнувшим мыс Горн в одиночном кругосветном плавании.</p>
+            <p>Об этом путешествии написана книга «В поисках сердца мира».</p>
+          </div>
+
+          <div class="article-block" id="school">
+            <h3>Школа Океан</h3>
+            <p>Идея Школы Океан принадлежит Виктору Аркадьевичу Языкову. Это не столько парусная школа, сколько целая философия правильного подхода не только к взаимодействию с океаном, но и в целом — школа правильной жизни.</p>
+            <p>В задачу Елагина входило создание, администрирование и редактирование сайта Школы, систематизация знаний. Также он участвовал в строительстве, спуске и ремонте уникальной яхты «Дочь Ветра», в проведении семинаров Языкова, в парусной регате «Кабестан» на «Дочери Ветра» и в других мероприятиях.</p>
+            <p>Школа организует и проводит встречи, семинары и практикумы, Виталий обеспечивает информационную поддержку. С 2024 года Виталий Елагин приобретает самостоятельность и ведет собственный Telegram-канал «Школа Океан Виталия Елагина».</p>
+            <p>В рамках работы над собой он увлёкся плавита-садханой — особым направлением в йоге, которая за счёт ритма, дыхания и воды позволяет поймать медитативное состояние. Это сочетание физиологической тренировки организма к внештатным ситуациям в море и духовной практики.</p>
+            <p>В 2025 году Елагин прошёл курс фридайвинга в школе Молчанова с сертификацией на уровень L2. С детства Виталия сопровождают дельфины: на первом швертботе «Оптимист» у него был талисман из позвонка дельфина — «первый подарок от китообразных». Для него дельфины — проводники к истокам жизни и радости от самого факта существования на этой планете.</p>
+            <p>Кроме того, в 2020 году Елагин прошёл курс обучения на остеопата и периодически практикует, оказывая помощь людям.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container">
+        <div class="section-head">
+          <h2>Опыт, на котором стоит нынешняя школа</h2>
+          <p>Эта биография важна не сама по себе. Она объясняет, почему Школа Океан говорит о море через практику, ответственность и личный опыт.</p>
+        </div>
+
+        <div class="fact-grid">
+          <article class="fact-card"><div class="num">01 / Детство</div><h3>Парус с ранних лет</h3><p>Крейсерские плавания, детские классы яхт и ранний интерес к одиночкам.</p></article>
+          <article class="fact-card"><div class="num">02 / Капитан</div><h3>Профессиональная практика</h3><p>Переходы, регаты, обучение взрослых, международные сертификаты и океанский опыт.</p></article>
+          <article class="fact-card"><div class="num">03 / Одиночник</div><h3>Море один на один</h3><p>Одиночные плавания, Jester Challenge, штормы, аварии и возвращения.</p></article>
+          <article class="fact-card"><div class="num">04 / Школа</div><h3>Живая система знаний</h3><p>Семинары, практикумы, сайт, материалы и современный формат Школы Океан.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-band">
+      <div class="container band-box">
+        <div class="eyebrow">Кругосветка 2023–2024</div>
+        <h2>«В поисках сердца мира»</h2>
+        <p>
+          Одиночная кругосветка на яхте «Дочь Ветра» стала одной из ключевых
+          историй нынешней Школы Океан. Это не только маршрут вокруг света, но и
+          проверка человека, лодки, связи, сна, ремонта и внутренней устойчивости.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="history.html">Открыть историю кругосветки</a>
+          <a class="btn btn-outline" href="index.html#project">Вернуться к проекту</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacts">
+      <div class="container cta-box">
+        <div>
+          <div class="eyebrow">Связаться со школой</div>
+          <h2>Следить за Школой Океан</h2>
+          <p>Новые материалы, заметки, видео, проекты и живая коммуникация школы доступны в Telegram-канале.</p>
+          <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Открыть Telegram</a>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-item" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener"><span>Telegram</span><strong>@Oceanschoolru</strong></a>
+          <a class="contact-item" href="mailto:solosail@oceanschool.ru"><span>Email</span><strong>solosail@oceanschool.ru</strong></a>
+          <a class="contact-item" href="index.html"><span>Главная</span><strong>Вернуться на сайт</strong></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© Школа Океан. Виталий Елагин.</div>
+      <div><a href="index.html">Вернуться на главную</a></div>
+    </div>
+  </footer>
 </body>
 </html>
