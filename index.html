@@ -101,7 +101,13 @@
 
     .cards { background: #f7f7f3; color: var(--dark); }
     .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .team-grid { grid-template-columns: repeat(4, 1fr); }
+    .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-grid .info-card h3 {
+    min-height: 58px;
+    }
     .entry-grid { grid-template-columns: repeat(4, 1fr); }
     .info-card { background: var(--white); border-radius: 26px; padding: 30px; min-height: 250px; box-shadow: 0 14px 35px rgba(0,0,0,0.08); }
     .info-card .num { color: #0b6fa4; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
@@ -390,7 +396,7 @@
         <div class="card-grid team-grid">
   <article class="info-card">
     <div class="num">Капитан</div>
-    <h3>Виталий Елагин</h3>
+    <h3>Виталий<br>Елагин</h3>
     <p>
       Проект «В поисках сердца мира», яхта «Дочь Ветра», океанская практика,
       современный формат Школы Океан, обучение и развитие живого морского сообщества.
@@ -399,7 +405,7 @@
 
   <article class="info-card">
     <div class="num">Цифровой проект</div>
-    <h3>Алексей Чванов</h3>
+     <h3>Алексей<br>Чванов</h3>
     <p>
       Цифровая перезапаковка сайта, структура проекта, связь с ADVENTURE HORIZONS,
       тексты, логика страниц и развитие сайта как рабочего инструмента.
@@ -408,7 +414,7 @@
 
   <article class="info-card">
     <div class="num">Команда</div>
-    <h3>Наталья Зарубина</h3>
+    <h3>Наталья<br>Зарубина</h3>
     <p>
       Поддержка проекта, коммуникации, участие в развитии сайта, материалов
       и живого пространства вокруг Школы Океан.
@@ -417,7 +423,7 @@
 
   <article class="info-card">
     <div class="num">Инженерия</div>
-    <h3>Петр Штаничев</h3>
+    <h3>Петр<br>Штаничев</h3>
     <p>
       Яхтенный инженер. Техническая экспертиза, практический взгляд на яхту,
       системы, эксплуатацию и инженерную сторону морских проектов.
@@ -426,7 +432,7 @@
 
   <article class="info-card">
     <div class="num">Ангел проекта</div>
-    <h3>Сергей Козловский</h3>
+    <h3>Сергей<br>Козловский</h3>
     <p>
       Девиз Сергея: «Если кто-то может — пусть делает!»
     </p>
