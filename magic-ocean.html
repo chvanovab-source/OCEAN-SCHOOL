@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магия Океана — Школа Океан Виталия Елагина</title>
+  <meta name="description" content="Магия Океана — философская страница Школы Океан Виталия Елагина: океан как учитель, яхта как инструмент познания, страх, сила, ответственность и взрослая морская практика." />
+
+  <style>
+    :root {
+      --bg: #061421;
+      --bg-soft: #0b2235;
+      --bg-card: #102b42;
+      --text: #f5f7fa;
+      --muted: #b9c5cf;
+      --accent: #f2b84b;
+      --line: rgba(255,255,255,0.12);
+      --white: #ffffff;
+      --dark: #07111b;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(6, 20, 33, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .brand img { width: 54px; height: auto; }
+    .brand span { display: block; font-size: 15px; line-height: 1.2; }
+    .menu { display: flex; align-items: center; gap: 22px; font-size: 14px; color: var(--muted); }
+    .menu a:hover { color: var(--white); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--accent); color: #17202a; }
+    .btn-primary:hover { transform: translateY(-1px); background: #ffd06a; }
+    .btn-outline { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero {
+      min-height: 780px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(6,20,33,0.96) 0%, rgba(6,20,33,0.82) 46%, rgba(6,20,33,0.32) 100%),
+        url("https://oceanschool.ru/wp-content/uploads/2018/07/hero_banner.jpg") center/cover no-repeat;
+    }
+
+    .hero-content { max-width: 820px; padding: 100px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; margin-bottom: 22px; }
+    h1 { font-size: clamp(44px, 8vw, 90px); line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 28px; }
+    .hero p { font-size: clamp(18px, 2vw, 24px); color: var(--muted); max-width: 760px; margin-bottom: 34px; text-align: justify; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    section { padding: 86px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(32px, 5vw, 58px); line-height: 1.04; letter-spacing: -0.04em; max-width: 760px; }
+    .section-head p { color: var(--muted); max-width: 440px; font-size: 17px; text-align: justify; }
+
+    .light { background: #f3f0e8; color: var(--dark); }
+    .dark { background: var(--bg); }
+    .soft { background: var(--bg-soft); }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .lead-card {
+      background: var(--white);
+      border-radius: 30px;
+      padding: 36px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+    }
+
+    .lead-card h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .lead-card p {
+      color: #334455;
+      font-size: 18px;
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+
+    .quote-card {
+      background:
+        radial-gradient(circle at 18% 8%, rgba(242,184,75,0.18), transparent 34%),
+        linear-gradient(135deg, #102b42, #07111b);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+    }
+
+    .quote-card h3 {
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .quote-card p {
+      color: var(--muted);
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .info-card {
+      background: var(--white);
+      color: var(--dark);
+      border-radius: 26px;
+      padding: 30px;
+      min-height: 250px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    }
+    .info-card .num { color: #0b6fa4; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .info-card h3 { font-size: 25px; line-height: 1.15; margin-bottom: 14px; }
+    .info-card p { color: #4b5d69; text-align: justify; }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .deep-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+    }
+
+    .deep-card h3 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .deep-card p {
+      color: var(--muted);
+      font-size: 18px;
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+
+    .deep-card p:last-child { margin-bottom: 0; }
+
+    .accent-line {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .archive-tile {
+      background: var(--white);
+      color: var(--dark);
+      border-radius: 24px;
+      padding: 26px;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: 0.2s ease;
+      min-height: 190px;
+    }
+
+    .archive-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+    }
+
+    .archive-tile .tag {
+      color: #0b6fa4;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .archive-tile h3 {
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .archive-tile p {
+      color: #4b5d69;
+      text-align: justify;
+      font-size: 16px;
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 22px 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .links-band {
+      background: var(--bg-soft);
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      font-size: 18px;
+      text-align: justify;
+      margin-bottom: 22px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+    .contact-item span { display: block; color: var(--muted); font-size: 13px; margin-bottom: 3px; }
+    .contact-item strong { font-size: 18px; }
+
+    footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; background: #040d16; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .lead-grid,
+      .philosophy-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid,
+      .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .menu { display: none; }
+      .hero { min-height: 640px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      section { padding: 64px 0; }
+      .nav { min-height: 68px; gap: 10px; }
+      .brand { gap: 8px; min-width: 130px; }
+      .brand img { width: 38px; }
+      .brand span { font-size: 12px; }
+      .topbar .btn { width: auto; padding: 11px 22px; font-size: 14px; }
+      .hero { min-height: 720px; align-items: flex-start; background-position: center top; }
+      .hero-content { padding: 120px 0 40px; }
+      .hero p { text-align: left; font-size: 17px; line-height: 1.65; }
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .btn,
+      .cta-actions .btn {
+        width: 100%;
+      }
+      .card-grid,
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+      .lead-card,
+      .quote-card,
+      .deep-card,
+      .cta-box {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="https://oceanschool.ru/wp-content/uploads/2018/07/logo.png" alt="Школа Океан" />
+        <span>Школа<br>Океан</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html">Главная</a>
+        <a href="#teacher">Океан как учитель</a>
+        <a href="#yacht">Яхта</a>
+        <a href="#archive">Тексты</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Философия Школы Океан</div>
+        <h1>Магия Океана</h1>
+        <p>
+          Это не раздел про мистику и не набор красивых морских фраз.
+          Это способ смотреть на море как на учителя: через яхту, риск,
+          страх, дисциплину, ответственность и живую практику.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#teacher">Читать дальше</a>
+          <a class="btn btn-outline" href="index.html">Школа Океан</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="teacher">
+      <div class="container lead-grid">
+        <div class="lead-card">
+          <div class="eyebrow">Океан как учитель</div>
+          <h2>Знания, которые нам дарит океан</h2>
+          <p>
+            В старой Школе Океан эта мысль была сформулирована просто и точно:
+            наше взаимодействие с миром идет через Океан. Это не украшение,
+            а рабочий способ познания — через воду, ветер, парус, страх,
+            усталость, ремонт, движение и ответственность.
+          </p>
+          <p>
+            Океан быстро убирает лишнее. В море не работают красивые роли,
+            случайные обещания и внешняя уверенность. Там остаются внимание,
+            дисциплина, ясность и способность отвечать за решение.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <div class="eyebrow">Главная мысль</div>
+          <h3>Океан не объясняет. Он показывает.</h3>
+          <p>
+            Поэтому Школа Океан — не только про обучение яхтингу. Это среда,
+            где человек учится видеть причинно-следственные связи, понимать свои
+            пределы и постепенно превращать страх в собранность.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container">
+        <div class="section-head">
+          <h2>Три урока Океана</h2>
+          <p>
+            Эти уроки одинаково важны для новичка, шкипера, одиночника
+            и человека, который только подходит к морю.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <div class="num">01 / Ясность</div>
+            <h3>Океан убирает лишнее</h3>
+            <p>
+              В море быстро становится видно, где человек действительно понимает
+              ситуацию, а где просто привык казаться уверенным.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">02 / Ответственность</div>
+            <h3>Решение имеет последствия</h3>
+            <p>
+              Погода, маршрут, вахта, ремонт, усталость и безопасность не прощают
+              пустых слов. Здесь важно не мнение, а действие.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="num">03 / Свобода</div>
+            <h3>Свобода начинается с дисциплины</h3>
+            <p>
+              Настоящая морская свобода не в отсутствии правил, а в способности
+              держать порядок внутри себя, экипажа и яхты.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="yacht">
+      <div class="container philosophy-grid">
+        <article class="deep-card">
+          <div class="eyebrow">Яхта как инструмент познания</div>
+          <h3>Не вещь. Не игрушка. Не декорация.</h3>
+          <p>
+            В философии Школы Океан яхта — это инструмент, через который человек
+            учится понимать море, себя, риск, силу, страх, усталость, ремонт,
+            движение и ответственность.
+          </p>
+          <p>
+            Эта линия идет от Виктора Языкова, для которого яхта была способом
+            познания мира, к Виталию Елагину, кругосветке «В поисках сердца мира»
+            и нынешней идее малых автономных яхт.
+          </p>
+        </article>
+
+        <article class="deep-card">
+          <div class="eyebrow">Страх, сила и пределы</div>
+          <h3>Океан не отменяет страх</h3>
+          <p>
+            Страх в море не является слабостью. Слабостью становится только
+            нежелание его видеть. Океан учит различать панику и осторожность,
+            риск и браваду, силу и жесткость.
+          </p>
+          <p>
+            <span class="accent-line">Задача Школы Океан</span> — не обещать легкость,
+            а готовить человека к настоящей морской практике: спокойно, честно
+            и без декоративного героизма.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="light" id="archive">
+      <div class="container">
+        <div class="section-head">
+          <h2>Что читать в архиве</h2>
+          <p>
+            Это не полный перенос старой рубрики. Здесь оставлены только тексты,
+            которые поддерживают философское и морское ядро новой Школы Океан.
+          </p>
+        </div>
+
+        <div class="archive-grid">
+          <a class="archive-tile" href="https://oceanschool.ru/2015/02/yahta-sootvetstvuyushhaya-cheloveku/" target="_blank" rel="noopener">
+            <div class="tag">Яхта</div>
+            <h3>Яхта, соответствующая Человеку</h3>
+            <p>
+              Один из ключевых текстов о яхте как инструменте познания, а не просто
+              средстве передвижения или предмете потребления.
+            </p>
+          </a>
+
+          <a class="archive-tile" href="https://oceanschool.ru/2016/03/pochemu-myi-ne-idyom-v-okean-ili-gde-nahodyatsya-nashi-predelyi/" target="_blank" rel="noopener">
+            <div class="tag">Пределы</div>
+            <h3>Почему мы не идём в Океан</h3>
+            <p>
+              Текст о внутренних границах человека и о том, почему до настоящего
+              океанского плавания доходят не все.
+            </p>
+          </a>
+
+          <a class="archive-tile" href="https://oceanschool.ru/2017/04/plavita-sadhana/" target="_blank" rel="noopener">
+            <div class="tag">Практика</div>
+            <h3>Плавита садхана</h3>
+            <p>
+              Материал о пути взаимодействия с миром через Океан, тело, движение,
+              воду и личную практику.
+            </p>
+          </a>
+
+          <a class="archive-tile" href="https://oceanschool.ru/2011/03/tihookeanskie-mnogokorpusniki/" target="_blank" rel="noopener">
+            <div class="tag">Конструкция</div>
+            <h3>Тихоокеанские многокорпусники</h3>
+            <p>
+              Архивный техническо-философский материал о лодках, мореходности,
+              простоте и морском инструменте.
+            </p>
+          </a>
+
+          <a class="archive-tile" href="https://oceanschool.ru/tag/vyibor-parusnogo-vooruzheniya/" target="_blank" rel="noopener">
+            <div class="tag">Парус</div>
+            <h3>Эволюция паруса</h3>
+            <p>
+              Материалы о выборе парусного вооружения и развитии идеи простой,
+              понятной и надежной яхты.
+            </p>
+          </a>
+
+          <a class="archive-tile" href="https://oceanschool.ru/2011/03/shkola-okean/" target="_blank" rel="noopener">
+            <div class="tag">Школа</div>
+            <h3>Школа Океан</h3>
+            <p>
+              Архивная формулировка идеи школы: желание выйти под парусом в океан
+              как внутренняя, экзистенциальная задача.
+            </p>
+          </a>
+        </div>
+
+        <div class="note">
+          Праздничные публикации, старые анонсы курсов, политико-исторические эссе
+          и тексты, которые уводят от морской философии, в новую страницу не включены.
+          Они не уничтожаются как архив, но не становятся частью новой смысловой витрины сайта.
+        </div>
+      </div>
+    </section>
+
+    <section class="links-band" id="contacts">
+      <div class="container cta-box">
+        <div>
+          <div class="eyebrow">Продолжить путь</div>
+          <h2>От философии — к практике</h2>
+          <p>
+            Магия Океана имеет смысл только тогда, когда она не остается красивым
+            текстом. Она должна вести к практике: к первому выходу, обучению,
+            дальним плаваниям, малым экипажам и настоящим морским проектам.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="index.html#entry">С чего начать</a>
+            <a class="btn btn-outline" href="history.html">В поисках сердца мира</a>
+          </div>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-item" href="yazyikov.html">
+            <span>Истоки</span>
+            <strong>Виктор Языков</strong>
+          </a>
+          <a class="contact-item" href="elagin.html">
+            <span>Сегодня</span>
+            <strong>Виталий Елагин</strong>
+          </a>
+          <a class="contact-item" href="arctic.html">
+            <span>Новый класс малых яхт</span>
+            <strong>Русский Mini-Transat</strong>
+          </a>
+          <a class="contact-item" href="https://t.me/Oceanschoolru" target="_blank" rel="noopener">
+            <span>Telegram</span>
+            <strong>@Oceanschoolru</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© Школа Океан. Магия Океана.</div>
+      <div><a href="index.html">Вернуться на главную</a></div>
+    </div>
+  </footer>
+</body>
+</html>
